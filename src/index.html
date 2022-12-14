@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>NewsPortal</title>
+</head>
+<body>
+<header>
+  <ul class="contacts">
+    <li class="contacts__item"><span class="contacts__item_label">label</span>+382 020 000 000</li>
+    <li class="contacts__item"><span class="contacts__item_label">label</span>Podgorica, Studentska bb, lamela 11</li>
+    <li class="contacts__item"><span class="contacts__item_label">label</span>Working clock: 08:00 - 17:00</li>
+  </ul>
+  <ul class="header-elements">
+    <li class="header-elements__element"><h1 class="logo"><span class="logo__element">Hobby</span><span
+      class="logo__element">Art</span></h1></li>
+    <li class="header-elements__element">
+      <form action="" method="get">
+        <input name="s" placeholder="Enter..." type="search">
+        <button type="submit">search-icon</button>
+      </form>
+    </li>
+    <li class="header-elements__element">Cart</li>
+  </ul>
+</header>
+<main>
+  <article class="main-banner">
+    <img src="#" alt="three yarn moths" class="main-banner__pic">
+    <div class="main-banner__description">
+      <h2 class="main-banner__product-name"></h2>
+      <p class="main-banner__text"></p>
+      <button class="button">View all</button>
+    </div>
+  </article>
+  <section>
+    <div class="path-to-section">
+      <span class="path-to-section__item">Main</span><span class="path-to-section__item">Catalog</span>
+    </div>
+    <div class="sorting-container">
+      <form action="#">
+        <fieldset class="sorting-container__item">
+          <legend class="sorting-container__title">Category</legend>
+          <div>
+            <input type="checkbox" id="yarn" name="yarn" checked>
+            <label for="yarn">Yarn</label>
+          </div>
+          <div>
+            <input type="checkbox" id="beads" name="beads">
+            <label for="beads">Beads</label>
+          </div>
+          <div>
+            <input type="checkbox" id="paint" name="paint">
+            <label for="paint">Paint</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pencils" name="pencils">
+            <label for="pencils">Colored Pencils</label>
+          </div>
+        </fieldset>
+        <fieldset class="sorting-container__item">
+          <legend class="sorting-container__title">Brand</legend>
+          <div>
+            <input type="checkbox" id="macrametr" name="macrametr">
+            <label for="macrametr">Macrametr</label>
+          </div>
+          <div>
+            <input type="checkbox" id="gamma" name="gamma">
+            <label for="gamma">Gamma</label>
+          </div>
+          <div>
+            <input type="checkbox" id="preciosa" name="preciosa">
+            <label for="preciosa">Preciosa</label>
+          </div>
+          <div>
+            <input type="checkbox" id="derwent" name="derwent">
+            <label for="derwent">Derwent</label>
+          </div>
+        </fieldset>
+        <fieldset class="sorting-container__item">
+          <legend class="sorting-container__title">Price</legend>
+          <div class="slider">
+              <label for="price">0 - 500€</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="price" name="price">
+          </div>
+        </fieldset>
+        <fieldset class="sorting-container__item">
+          <legend class="sorting-container__title">Quantity in stock</legend>
+          <div class="slider">
+            <div>
+              <label for="price">0 - 500 pieces</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="quantity" name="quantity">
+            </div>
+          </div>
+        </fieldset>
+        <button class="button" type="submit">View</button>
+        <button class="button" type="reset">Reset</button>
+      </form>
+    </div>
+    <div class="filters-container"></div>
+  </section>
+</main>
+<script src="#"></script>
+</body>
+</html>
