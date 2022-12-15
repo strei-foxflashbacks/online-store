@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>NewsPortal</title>
+</head>
+<body>
+<header>
+  <ul class="contacts">
+    <li class="contacts__item"><span class="contacts__item_label">label</span>+382 020 000 000</li>
+    <li class="contacts__item"><span class="contacts__item_label">label</span>Podgorica, Studentska bb, lamela 11</li>
+    <li class="contacts__item"><span class="contacts__item_label">label</span>Working clock: 08:00 - 17:00</li>
+  </ul>
+  <ul class="header-elements">
+    <li class="header-elements__element"><h1 class="logo"><span class="logo__element">Hobby</span><span
+      class="logo__element">Art</span></h1></li>
+    <li class="header-elements__element">
+      <form action="" method="get">
+        <input name="s" placeholder="Enter..." type="search">
+        <button type="submit">search-icon</button>
+      </form>
+    </li>
+    <li class="header-elements__element">Cart</li>
+  </ul>
+</header>
+<main>
+  <article class="main-banner">
+    <img src="assets/yarn-macrame.png" alt="three yarn moths" class="main-banner__pic">
+    <div class="main-banner__description">
+      <h2 class="main-banner__product-name"></h2>
+      <p class="main-banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <button class="button">View all</button>
+    </div>
+  </article>
+  <section>
+    <div class="path-to-section">
+      <span class="path-to-section__item">Main</span><span class="path-to-section__item">Catalog</span>
+    </div>
+    <div class="sort-button-container">
+      <div class="count-products-container">
+        <div class="icon-12">icon for 12 products</div>
+        <div class="icon-9">icon for 9 products</div>
+      </div>
+      <select name="sort-by">
+          <option value="min">Low to High</option>
+          <option value="max">High to Low</option>
+          <option value="new">Newest Arrival</option>
+      </select>
+    </div>
+    <div class="filter-container">
+      <form action="#">
+        <fieldset class="filter-container__item">
+          <legend class="filter-container__title">Category</legend>
+          <div>
+            <input type="checkbox" id="yarn" name="yarn" checked>
+            <label for="yarn">Yarn</label>
+          </div>
+          <div>
+            <input type="checkbox" id="beads" name="beads">
+            <label for="beads">Beads</label>
+          </div>
+          <div>
+            <input type="checkbox" id="paint" name="paint">
+            <label for="paint">Paint</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pencils" name="pencils">
+            <label for="pencils">Colored Pencils</label>
+          </div>
+        </fieldset>
+        <fieldset class="filter-container__item">
+          <legend class="filter-container__title">Brand</legend>
+          <div>
+            <input type="checkbox" id="macrametr" name="macrametr">
+            <label for="macrametr">Macrametr</label>
+          </div>
+          <div>
+            <input type="checkbox" id="gamma" name="gamma">
+            <label for="gamma">Gamma</label>
+          </div>
+          <div>
+            <input type="checkbox" id="preciosa" name="preciosa">
+            <label for="preciosa">Preciosa</label>
+          </div>
+          <div>
+            <input type="checkbox" id="derwent" name="derwent">
+            <label for="derwent">Derwent</label>
+          </div>
+        </fieldset>
+        <fieldset class="filter-container__item">
+          <legend class="filter-container__title">Price</legend>
+          <div class="slider">
+              <label for="price">0 - 500€</label>
+              <input type="range" min="1" max="100" value="50" class="slider" id="price" name="price">
+          </div>
+        </fieldset>
+        <fieldset class="filter-container__item">
+          <legend class="filter-container__title">Quantity in stock</legend>
+          <div class="slider">
+            <label for="price">0 - 500 pieces</label>
+            <input type="range" min="1" max="100" value="50" class="slider" id="quantity" name="quantity">
+          </div>
+        </fieldset>
+        <button class="button" type="submit">View</button>
+        <button class="button" type="reset">Reset</button>
+      </form>
+    </div>
+    <div class="filters-container"></div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="catalog-card">
+        <img src="#" alt="">
+        <div class="catalog-card__name">Yarn Macrametr 4mm</div>
+        <div class="catalog-card__price">3.95 €</div>
+        <button class="button">Add to cart</button>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="index.ts"></script>
+</body>
+</html>
