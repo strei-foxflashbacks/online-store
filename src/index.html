@@ -38,7 +38,18 @@
     <div class="path-to-section">
       <span class="path-to-section__item">Main</span><span class="path-to-section__item">Catalog</span>
     </div>
-    <div class="sorting-container">
+    <div class="sort-button-container">
+      <div class="count-products-container">
+        <div class="icon-12">icon for 12 products</div>
+        <div class="icon-9">icon for 9 products</div>
+      </div>
+      <select name="sort-by">
+          <option value="min">Low to High</option>
+          <option value="max">High to Low</option>
+          <option value="new">Newest Arrival</option>
+      </select>
+    </div>
+    <div class="filter-container">
       <form action="#">
         <fieldset class="sorting-container__item">
           <legend class="sorting-container__title">Category</legend>
