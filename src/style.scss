@@ -1,1 +1,6 @@
-@import "base/_variables.scss";
+@import "base/variables";
+@import "components/catalog";
+
+body {
+  background-color: $main-background;
+}

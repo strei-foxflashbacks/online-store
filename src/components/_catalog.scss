@@ -1,0 +1,30 @@
+.catalog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  max-width: 1337px;
+  gap: 28px;
+}
+
+.catalog-card {
+  width: 245px;
+  height: 422px;
+  border-radius: 20px;
+  background-color: $background-cards;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__photo {
+    max-width: 200px;
+  }
+
+  &__name {
+    font: $main-font;
+    align-self: flex-start;
+  }
+  &__price {
+    font: $font-bold;
+    align-self: flex-start;
+  }
+}
