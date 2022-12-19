@@ -7,6 +7,16 @@
     border: none;
     color: $light-on-dark;
   }
+  &_color {
+    @include button;
+    background: $gradient;
+    border: none;
+    color: $light-on-dark;
+    font-family: 'Spectral SC', serif;
+    font-size: 16px;
+    width: 185px;
+    text-transform: uppercase;
+  }
 }
 
 .cart-counter {
@@ -44,5 +54,6 @@
     background-color: rgba(255, 255, 255, 0);
   }
 }
+
 
 

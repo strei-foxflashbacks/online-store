@@ -10,6 +10,8 @@ import './assets/map.svg';
 import './assets/phone.svg';
 import './assets/logo.svg';
 import './assets/search.svg';
+import './assets/oval1.svg';
+import './assets/oval2.svg';
 import './assets/1.jpg';
 import './assets/2.jpg';
 import './assets/3.jpg';

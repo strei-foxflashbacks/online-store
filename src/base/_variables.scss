@@ -6,7 +6,7 @@ $light-on-dark: white;
 $font-color: #424242;
 $button-inactive-color: #9b9b9b;
 $brand-color: rgb(151,100,100,1);
-$additional-color: #D3D3B5;
+$additional-color: #dedebe;
 
 
 //fonts
@@ -23,6 +23,7 @@ max-width: 1620px;
   border-radius: 30px;
   color: $button-inactive-color;
   height: 38px;
+  background-color: rgba(255, 255, 255, 0);
 
   &:hover {
     border: 2px solid $brand-color;
