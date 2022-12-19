@@ -1,0 +1,48 @@
+.button {
+  @include button;
+  width: 114px;
+
+  &:active {
+    background: $gradient;
+    border: none;
+    color: $light-on-dark;
+  }
+}
+
+.cart-counter {
+  width: 20px;
+  height: 20px;
+  border-radius: 17px;
+  background-color: $additional-color;
+  display: block;
+  position: absolute;
+  font-size: 10px;
+  color: black;
+  top: -8px;
+  right: 15px;
+  text-align: center;
+  padding-top: 4px;
+  box-sizing: border-box;
+}
+
+.form {
+  position: relative;
+  &__input {
+    @include button;
+    padding-left: 10px;
+    resize: vertical;
+    width: 184px;
+  }
+  &__search-button {
+    border: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    top: 10px;
+    right: 10px;
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+

@@ -1,0 +1,46 @@
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  padding: 0;
+  width: 100%;
+  @include content-container;
+
+  &__item {
+    list-style-type: none;
+    color: $light-on-dark;
+    font: $main-font;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.container-contacts {
+  height: 45px;
+  background: $gradient;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin: auto;
+  width: 171.25px;
+  height: 61.5px;
+  display: block;
+  }
+
+.header-elements {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-container {
+  position: relative;
+}
+
