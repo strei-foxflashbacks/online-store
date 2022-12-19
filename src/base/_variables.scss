@@ -2,6 +2,7 @@
 $main-background: #E8E8E8;
 $background-cards: white;
 $gradient: linear-gradient(90deg, rgba(151,100,100,1) 0%, rgba(207,165,165,1) 100%);
+$gradient-hover: linear-gradient(90deg,rgba(207,165,165,1) 100%, rgb(145, 82, 82) 0%);
 $light-on-dark: white;
 $font-color: #424242;
 $button-inactive-color: #9b9b9b;
@@ -24,6 +25,7 @@ max-width: 1620px;
   color: $button-inactive-color;
   height: 38px;
   background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
 
   &:hover {
     border: 2px solid $brand-color;

@@ -8,7 +8,6 @@
     color: $light-on-dark;
   }
   &_color {
-    @include button;
     background: $gradient;
     border: none;
     color: $light-on-dark;
@@ -18,6 +17,25 @@
     text-transform: uppercase;
   }
 }
+
+.button_color {
+  cursor: pointer;
+  height: 38px;
+  border-radius: 30px;
+}
+
+.button_color:active {
+  color: $font-color;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid $font-color;
+}
+
+.button_color:hover {
+  background: $gradient-hover;
+  border: none;
+  color: $light-on-dark;
+}
+
 
 .cart-counter {
   width: 20px;
