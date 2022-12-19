@@ -27,10 +27,16 @@
   }
   &__decor1 {
     position: absolute;
+    right: 655px;
   }
   &__decor2 {
     position: absolute;
     right: 0;
     bottom: 0;
+  }
+  &__decor3 {
+    position: absolute;
+    top: -77px;
+    right: 94px;
   }
 }
