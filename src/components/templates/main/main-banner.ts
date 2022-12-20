@@ -1,6 +1,8 @@
 const getMainBanner = (): HTMLElement => {
   const mainBanner = document.createElement('article');
 
+  mainBanner.className = 'main-banner';
+
   mainBanner.innerHTML = `
   <img src="assets/oval1.svg" alt="decor" class="main-banner__decor1">
   <img src="assets/promo.svg" alt="decor" class="main-banner__decor3">
