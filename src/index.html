@@ -65,85 +65,86 @@
       <img src="./assets/oval2.svg" alt="decor" class="main-banner__decor2">
     </div>
   </article>
-  <section>
+  <div class="sort-button-container">
     <div class="path-to-section">
-      <span class="path-to-section__item"> Main <span class="arrow">→</span></span><span class="path-to-section__item" id="catalog"> Catalog </span>
+      <a href="index.html" class="path-to-section__item"> Main </a><span class="arrow">→</span><a href="#catalog" class="path-to-section__item" id="catalog"> Catalog </a>
     </div>
-    <div class="sort-button-container">
-      <div class="count-products-container">
-        <div class="icon-12">icon for 12 products</div>
-        <div class="icon-9">icon for 9 products</div>
-      </div>
-      <select name="sort-by">
+    <div class="count-products-container">
+      <img src="./assets/grid3.svg" alt="icon switching the number of products on the page" class="icon-grid">
+      <img src="./assets/grid4.svg" alt="icon switching the number of products on the page" class="icon-grid">
+      <select name="sort-by" class="filter-select">
         <option value="min">Low to High</option>
         <option value="max">High to Low</option>
         <option value="new">Newest Arrival</option>
       </select>
     </div>
+  </div>
+  <div class="main-container">
+  <section class="filters">
     <div class="filter-container">
       <form action="#">
         <fieldset class="filter-container__item">
           <legend class="filter-container__title">Category</legend>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="knittingNeedles" name="knittingNeedles" checked>
             <label for="knittingNeedles">Knitting Needles</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="knittingBags" name="knittingBags">
             <label for="knittingBags">Knitting Bags</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="sewingMachines" name="sewingMachines">
             <label for="sewingMachines">Sewing Machines</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="sewingBoxes" name="sewingBoxes">
             <label for="sewingBoxes">Sewing Boxes</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="needleFeltingKits" name="needleFeltingKits">
             <label for="needleFeltingKits">Needle Felting Kits</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="yarn" name="yarn">
             <label for="yarn">Yarn</label>
           </div>
         </fieldset>
         <fieldset class="filter-container__item">
           <legend class="filter-container__title">Brand</legend>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="womensInstitute" name="womensInstitute">
             <label for="womensInstitute">Women's Institute</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="knitcraft" name="knitcraft">
             <label for="knitcraft">Knitcraft</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="pony" name="pony">
             <label for="pony">Pony</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="hayfield" name="hayfield">
             <label for="hayfield">Hayfield</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="peterPan" name="peterPan">
             <label for="peterPan">Peter Pan</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="jamesCBrett" name="jamesCBrett">
             <label for="jamesCBrett">James C Brett</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="hobbyCraft" name="hobbyCraft">
             <label for="hobbyCraft">Hobbycraft</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="janome" name="janome">
             <label for="janome">Janome</label>
           </div>
-          <div>
+          <div class="filter-container__section">
             <input type="checkbox" id="trimits" name="trimits">
             <label for="trimits">Trimits</label>
           </div>
@@ -162,14 +163,16 @@
             <input type="range" min="0" max="10000" value="4500" class="slider" id="quantity" name="quantity">
           </div>
         </fieldset>
-        <button class="button" type="submit">View</button>
-        <button class="button" type="button">Copy</button>
-        <button class="button" type="reset">Reset</button>
+        <div class="container-for-buttons">
+          <button class="button" type="submit">View</button>
+          <button class="button" type="button">Copy</button>
+          <button class="button" type="reset">Reset</button>
+        </div>
       </form>
     </div>
     <div class="filters-container"></div>
   </section>
-  <section>
+  <section class="catalog">
     <div class="container">
       <div class="catalog-card">
         <img src="#" alt="">
@@ -179,7 +182,17 @@
       </div>
     </div>
   </section>
+  </div>
 </main>
 <script src="index.ts"></script> -->
 </body>
+<footer class="footer">
+  <img src="assets/logo.svg" alt="logo" class="logo">
+  <div class="autors-links">
+    <a href="https://github.com/inna1305">inna1305</a>
+    <a href="https://github.com/strei-foxflashbacks">strei-foxflashbacks</a>
+    <div>2022</div>
+  </div>
+  <img src="assets/rs_school_js.svg" alt="logo rs school" class="rs-logo">
+</footer>
 </html>
