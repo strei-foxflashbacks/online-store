@@ -1,0 +1,42 @@
+.main-banner {
+  max-width: 1620px;
+  margin: auto;
+  height: 462px;
+  background-color: $additional-color;
+  border-radius: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 50px;
+  position: relative;
+
+  &__product-name {
+    font-family: 'Spectral SC', serif;
+    font-size: 28px;
+  }
+  &__pic {
+    display: block;
+    margin-left: 170px;
+  }
+  &__text {
+    max-width: 480px;
+    margin-bottom: 35px;
+  }
+  &__description {
+    margin-top: 35px;
+  }
+  &__decor1 {
+    position: absolute;
+    right: 655px;
+  }
+  &__decor2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &__decor3 {
+    position: absolute;
+    top: -77px;
+    right: 94px;
+  }
+}

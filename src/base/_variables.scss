@@ -1,0 +1,34 @@
+//colors
+$main-background: #E8E8E8;
+$background-cards: white;
+$gradient: linear-gradient(90deg, rgba(151,100,100,1) 0%, rgba(207,165,165,1) 100%);
+$gradient-hover: linear-gradient(90deg,rgba(207,165,165,1) 100%, rgb(145, 82, 82) 0%);
+$light-on-dark: white;
+$font-color: #424242;
+$button-inactive-color: #9b9b9b;
+$brand-color: rgb(151,100,100,1);
+$additional-color: #dedebe;
+
+
+//fonts
+$main-font: 400 16px 'Montserrat', sans-serif;
+$font-bold: 600 16px 'Montserrat', sans-serif;
+
+
+@mixin content-container {
+max-width: 1620px;
+  margin: auto;
+}
+@mixin button {
+  border: 2px solid $button-inactive-color;
+  border-radius: 30px;
+  color: $button-inactive-color;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid $brand-color;
+    color: $brand-color;
+  }
+}
