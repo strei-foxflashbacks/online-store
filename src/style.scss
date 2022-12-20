@@ -1,6 +1,18 @@
+@import "base/normalize.css";
 @import "base/variables";
 @import "components/catalog";
+@import "base/header";
+@import "components/buttons";
+@import "components/banner";
 
 body {
   background-color: $main-background;
+  color: $font-color;
+  font: $main-font;
 }
+
+.content-container {
+  @include content-container;
+  position: relative;
+}
+

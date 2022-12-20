@@ -7,42 +7,67 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@600&display=swap" rel="stylesheet">
   <title>Hobby Art</title>
 </head>
 <body>
 <header>
-  <ul class="contacts">
-    <li class="contacts__item"><span class="contacts__item_label">label</span>+382 020 000 000</li>
-    <li class="contacts__item"><span class="contacts__item_label">label</span>Podgorica, Studentska bb, lamela 11</li>
-    <li class="contacts__item"><span class="contacts__item_label">label</span>Working clock: 08:00 - 17:00</li>
-  </ul>
-  <ul class="header-elements">
-    <li class="header-elements__element"><h1 class="logo"><span class="logo__element">Hobby</span><span
-      class="logo__element">Art</span></h1></li>
-    <li class="header-elements__element">
-      <form action="" method="get">
-        <input name="s" placeholder="Enter..." type="search">
-        <button type="submit">search-icon</button>
+  <div class="container-contacts">
+    <div class="contacts">
+      <div class="contacts__item"><img src="./assets/phone.svg" alt="phone icon" class="icon">
+        <div class="contacts__text">+382 020 000 000</div>
+      </div>
+      <div class="contacts__item"><img src="./assets/map.svg" alt="map icon" class="icon">
+        <div>Podgorica, Studentska bb,
+          lamela 11
+        </div>
+      </div>
+      <div class="contacts__item"><img src="./assets/clock.svg" alt="clock icon" class="icon">
+        <div>Working clock: 08:00 -
+          17:00
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-container">
+    <h1>
+      <img src="assets/logo.svg" alt="logo" class="logo">
+    </h1>
+    <div class="header-elements">
+      <form action="" method="get" class="form">
+        <input name="s" placeholder="Enter..." type="search" class="form__input">
+        <button type="submit" class="form__search-button"><img src="./assets/search.svg" alt=""></button>
       </form>
-    </li>
-    <li class="header-elements__element">Cart</li>
-  </ul>
+      <div class="cart-container"></div>
+      <button type="button" class="button">Cart</button>
+      <span class="cart-counter" id="cartCounter">0</span>
+    </div>
+  </div>
 </header>
 <main>
   <article class="main-banner">
+    <img src="assets/oval1.svg" alt="decor" class="main-banner__decor1">
+    <img src="assets/promo.svg" alt="decor" class="main-banner__decor3">
     <img src="assets/yarn-macrame.png" alt="three yarn moths" class="main-banner__pic">
     <div class="main-banner__description">
-      <h2 class="main-banner__product-name"></h2>
-      <p class="main-banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <button class="button">View all</button>
+      <h2 class="main-banner__product-name">Yarn Macrametr</h2>
+      <p class="main-banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+      <button class="button_color"><a href="#catalog"></a>View all</button>
+      <img src="./assets/oval2.svg" alt="decor" class="main-banner__decor2">
     </div>
   </article>
   <section>
     <div class="path-to-section">
-      <span class="path-to-section__item">Main</span><span class="path-to-section__item">Catalog</span>
+      <span class="path-to-section__item"> Main <span class="arrow">→</span></span><span class="path-to-section__item" id="catalog"> Catalog </span>
     </div>
     <div class="sort-button-container">
       <div class="count-products-container">
@@ -50,9 +75,9 @@
         <div class="icon-9">icon for 9 products</div>
       </div>
       <select name="sort-by">
-          <option value="min">Low to High</option>
-          <option value="max">High to Low</option>
-          <option value="new">Newest Arrival</option>
+        <option value="min">Low to High</option>
+        <option value="max">High to Low</option>
+        <option value="new">Newest Arrival</option>
       </select>
     </div>
     <div class="filter-container">
