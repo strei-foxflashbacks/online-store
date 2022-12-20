@@ -1,0 +1,26 @@
+.footer {
+  background: $additional-gradient;
+  height: 380px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  & > .logo {
+    margin: 0;
+  }
+  & a {
+    font-size: 19px;
+    font-weight: 600;
+  }
+}
+.rs-logo {
+  width: 150px;
+  display: block;
+}
+.autors-links {
+  display: flex;
+  gap: 20px;
+  font-size: 19px;
+  font-weight: 600;
+}

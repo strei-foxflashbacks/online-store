@@ -15,6 +15,7 @@ import './assets/oval2.svg';
 import './assets/promo.svg';
 import './assets/grid3.svg';
 import './assets/grid4.svg';
+import './assets/rs_school_js.svg'
 import './assets/1.jpg';
 import './assets/2.jpg';
 import './assets/3.jpg';

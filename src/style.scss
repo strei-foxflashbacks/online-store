@@ -5,6 +5,7 @@
 @import "components/buttons";
 @import "components/banner";
 @import "components/filters";
+@import "components/footer";
 
 body {
   background-color: $main-background;
@@ -19,5 +20,8 @@ fieldset {
 .content-container {
   @include content-container;
   position: relative;
+}
+a {
+  text-decoration: none;
 }
 
