@@ -44,4 +44,10 @@ import './assets/28.jpg';
 import './assets/29.jpg';
 import './assets/30.jpg';
 
+// app call (temp)
+
+import getMainPage from './components/mainPage';
+
+getMainPage();
+
 console.log('Hello, World!');

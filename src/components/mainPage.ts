@@ -1,52 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@600&display=swap" rel="stylesheet">
-  <title>Hobby Art</title>
-</head>
-<body>
-<!-- <header>
-  <div class="container-contacts">
-    <div class="contacts">
-      <div class="contacts__item"><img src="./assets/phone.svg" alt="phone icon" class="icon">
-        <div class="contacts__text">+382 020 000 000</div>
-      </div>
-      <div class="contacts__item"><img src="./assets/map.svg" alt="map icon" class="icon">
-        <div>Podgorica, Studentska bb,
-          lamela 11
-        </div>
-      </div>
-      <div class="contacts__item"><img src="./assets/clock.svg" alt="clock icon" class="icon">
-        <div>Working clock: 08:00 -
-          17:00
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="content-container">
-    <h1>
-      <img src="assets/logo.svg" alt="logo" class="logo">
-    </h1>
-    <div class="header-elements">
-      <form action="" method="get" class="form">
-        <input name="s" placeholder="Enter..." type="search" class="form__input">
-        <button type="submit" class="form__search-button"><img src="./assets/search.svg" alt=""></button>
-      </form>
-      <div class="cart-container"></div>
-      <button type="button" class="button">Cart</button>
-      <span class="cart-counter" id="cartCounter">0</span>
-    </div>
-  </div>
-</header>
-<main>
+import setDefaultPage from "./defaultPage";
+// import getMainBanner from "./templates/main/main-banner";
+
+const getMainPage = () => {
+  setDefaultPage();
+
+  const main = document.querySelector('main') as HTMLElement;
+
+  main.insertAdjacentHTML('afterbegin', `
   <article class="main-banner">
     <img src="assets/oval1.svg" alt="decor" class="main-banner__decor1">
     <img src="assets/promo.svg" alt="decor" class="main-banner__decor3">
@@ -167,19 +127,18 @@
         <button class="button" type="reset">Reset</button>
       </form>
     </div>
-    <div class="filters-container"></div>
-  </section>
-  <section>
-    <div class="container">
-      <div class="catalog-card">
-        <img src="#" alt="">
-        <div class="catalog-card__name">Yarn Macrametr 4mm</div>
-        <div class="catalog-card__price">3.95 €</div>
-        <button class="button">Add to cart</button>
-      </div>
+  <div class="filters-container"></div>
+</section>
+<section>
+  <div class="container">
+    <div class="catalog-card">
+      <img src="#" alt="">
+      <div class="catalog-card__name">Yarn Macrametr 4mm</div>
+      <div class="catalog-card__price">3.95 €</div>
+      <button class="button">Add to cart</button>
     </div>
-  </section>
-</main>
-<script src="index.ts"></script> -->
-</body>
-</html>
+  </div>
+</section>`)
+}
+
+export default getMainPage;
