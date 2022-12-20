@@ -1,9 +1,11 @@
 @import "base/normalize.css";
 @import "base/variables";
 @import "components/catalog";
-@import "base/header";
+@import "components/header";
 @import "components/buttons";
 @import "components/banner";
+@import "components/filters";
+@import "components/footer";
 
 body {
   background-color: $main-background;
@@ -11,8 +13,15 @@ body {
   font: $main-font;
 }
 
+fieldset {
+  border: none;
+}
+
 .content-container {
   @include content-container;
   position: relative;
+}
+a {
+  text-decoration: none;
 }
 
