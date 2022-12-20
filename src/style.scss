@@ -1,14 +1,19 @@
 @import "base/normalize.css";
 @import "base/variables";
 @import "components/catalog";
-@import "base/header";
+@import "components/header";
 @import "components/buttons";
 @import "components/banner";
+@import "components/filters";
 
 body {
   background-color: $main-background;
   color: $font-color;
   font: $main-font;
+}
+
+fieldset {
+  border: none;
 }
 
 .content-container {
