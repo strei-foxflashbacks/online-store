@@ -7,7 +7,7 @@ $additional-gradient: linear-gradient(90deg, rgba(194,194,160,1) 0%, rgba(223,22
 $gradient-hover: linear-gradient(90deg,rgba(207,165,165,1) 100%, rgb(145, 82, 82) 0%);
 $light-on-dark: white;
 $font-color: #424242;
-$button-inactive-color: #9b9b9b;
+$button-inactive-color: #8a8888;
 $brand-color: rgb(151,100,100,1);
 $additional-color: #dedebe;
 
@@ -15,6 +15,7 @@ $additional-color: #dedebe;
 //fonts
 $main-font: 400 16px 'Montserrat', sans-serif;
 $font-bold: 600 16px 'Montserrat', sans-serif;
+$additional-font: 400 16px 'Spectral SC', serif;
 
 
 @mixin content-container {
