@@ -13,7 +13,7 @@ const getContent = (): HTMLElement => {
       <button type="submit" class="form__search-button"><img src="./assets/search.svg" alt=""></button>
     </form>
     <div class="cart-container"></div>
-    <button type="button" class="button">Cart</button>
+    <button type="button" class="button"><span id="totalSum">Cart</span></button>
     <span class="cart-counter" id="cartCounter">0</span>
   </div>`
 

@@ -50,7 +50,7 @@ import './assets/30.jpg';
 // app call (temp)
 
 import getMainPage from './components/mainPage';
-import { Cart } from "./components/cart";
+import {Cart} from "./components/cart";
 import {productData} from "./components/product-data";
 import {IProductData} from "./types/IProductData";
 
@@ -59,9 +59,8 @@ getMainPage();
 console.log('Hello, World!');
 
 const STORE_CARD = new Cart();
-const CARD_ARRAY = document.querySelectorAll('catalog-card');
-//const CURRENT_CART: IProductData[] = [];
-// const TEXT_CART: number | string = document.;
+const TEXT_CART = document.querySelector('#totalSum');
+const CART_COUNTER = document.querySelector('#cartCounter');
 
 
 //во время генерации карточек вешать обработчики на кнопку добавления товара в корзину
@@ -84,15 +83,16 @@ function addToCartHandler(target: HTMLElement) {
   }
   //из элемента кнопки на сработавшем событии узнаем наименование продукта
   // (ввести ли лучше id каждому продукту??)
-  let name = getProductName(parentElement);
+  const name = getProductName(parentElement);
   productData.forEach(product => {
     if (product.name === name) {
-      STORE_CARD.addProductToCart(product);//что делать если несколько одинаковых продуктов в корзине?
+      STORE_CARD.addProductToCart(product);
+      //что делать если несколько одинаковых продуктов в корзине?
     }
+    updateCartView();
   });
-//написать метод который при изменении корзины пересчитывает и отображает новую цену и количество товаров
-//брать данные из карточки продукта на странице или из базы продуктов?
-
+//написать проверку, если такой товар уже добавлен, то добавить в карту + и - (есть ли в тз?)
+  //добавить можно только столько сколько есть на складе!!(сравнивать количество с полем продукта stock
 
   function getProductName(parentElement: HTMLElement) {
     for (const child of parentElement.children) {
@@ -100,13 +100,19 @@ function addToCartHandler(target: HTMLElement) {
         return child.innerHTML;
       }
     }
-      throw Error('card name not found!');
+    throw Error('card name not found!');
   }
 }
 
-// function updateCartView() {
-//   if () {
-//
-//   }
-// }
+function updateCartView() {
+  const sum = STORE_CARD.getSumOfProducts();
+  if (TEXT_CART) {
+    TEXT_CART.innerHTML = `${sum}€`
+  } else throw new Error('Button Cart is not found!');
+
+  if (CART_COUNTER) {
+    CART_COUNTER.innerHTML = `${STORE_CARD.countOfProducts()}`;
+  } else throw new Error('cart counter is not found!');
+}
+
 
