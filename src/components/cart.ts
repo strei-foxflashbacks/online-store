@@ -1,12 +1,12 @@
 import { IProductData } from "../types/IProductData";
 
 export class Cart {
-  products: Array<IProductData>;
+  private products: Array<IProductData>;
   constructor() {
     this.products = [];
   }
-  countOfProducts(products: Array<IProductData>) {
-    return products.length;
+  countOfProducts() {
+    return this.products.length;
   }
   getSumOfProducts() {
     let sumOfProducts = 0;
