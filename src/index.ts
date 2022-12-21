@@ -50,7 +50,63 @@ import './assets/30.jpg';
 // app call (temp)
 
 import getMainPage from './components/mainPage';
+import { Cart } from "./components/cart";
+import {productData} from "./components/product-data";
+import {IProductData} from "./types/IProductData";
 
 getMainPage();
 
 console.log('Hello, World!');
+
+const STORE_CARD = new Cart();
+const CARD_ARRAY = document.querySelectorAll('catalog-card');
+//const CURRENT_CART: IProductData[] = [];
+// const TEXT_CART: number | string = document.;
+
+
+//во время генерации карточек вешать обработчики на кнопку добавления товара в корзину
+document.addEventListener('click', (event) => {
+  if (!event) {
+    throw new Error();
+  }
+  const target = event.target as HTMLElement;
+  if (target.classList.contains('card-button-add-to-cart')) {
+    //
+    addToCartHandler(target);
+  }
+});
+
+function addToCartHandler(target: HTMLElement) {
+
+  const parentElement = target.parentElement;
+  if (parentElement === null) {
+    throw new Error();
+  }
+  //из элемента кнопки на сработавшем событии узнаем наименование продукта
+  // (ввести ли лучше id каждому продукту??)
+  let name = getProductName(parentElement);
+  productData.forEach(product => {
+    if (product.name === name) {
+      STORE_CARD.addProductToCart(product);//что делать если несколько одинаковых продуктов в корзине?
+    }
+  });
+//написать метод который при изменении корзины пересчитывает и отображает новую цену и количество товаров
+//брать данные из карточки продукта на странице или из базы продуктов?
+
+
+  function getProductName(parentElement: HTMLElement) {
+    for (const child of parentElement.children) {
+      if (child.classList.contains('catalog-card__name')) {
+        return child.innerHTML;
+      }
+    }
+      throw Error('card name not found!');
+  }
+}
+
+// function updateCartView() {
+//   if () {
+//
+//   }
+// }
+
