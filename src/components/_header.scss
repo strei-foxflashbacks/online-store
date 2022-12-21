@@ -28,7 +28,13 @@
   margin: 45px auto 80px;
   width: 171.25px;
   height: 61.5px;
-  display: block;
+  font: $additional-font;
+  font-size: 50px;
+  color: $button-inactive-color;
+  hyphens: auto;
+  line-height: 0.75;
+  letter-spacing: -1px;
+  text-align: center;
   }
 
 .header-elements {
