@@ -9,7 +9,7 @@ const getCatalog = (): HTMLElement => {
       <img src="#" alt="">
       <div class="catalog-card__name">Yarn Macrametr 4mm</div>
       <div class="catalog-card__price">3.95 €</div>
-      <button class="button">Add to cart</button>
+      <button class="button card-button-add-to-cart">Add to cart</button>
     </div>
   </div>`;
 
