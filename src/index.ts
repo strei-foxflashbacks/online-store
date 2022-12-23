@@ -52,7 +52,6 @@ import './assets/30.jpg';
 import getMainPage from './components/mainPage';
 import {Cart} from "./components/cart";
 import {productData} from "./components/product-data";
-import {IProductData} from "./types/IProductData";
 
 getMainPage();
 
@@ -87,7 +86,6 @@ function addToCartHandler(target: HTMLElement) {
   productData.forEach(product => {
     if (product.name === name) {
       STORE_CARD.addProductToCart(product);
-      //что делать если несколько одинаковых продуктов в корзине?
     }
     updateCartView();
   });
