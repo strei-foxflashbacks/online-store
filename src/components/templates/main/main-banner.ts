@@ -5,7 +5,6 @@ const getMainBanner = (): HTMLElement => {
 
   mainBanner.innerHTML = `
   <img src="assets/oval1.svg" alt="decor" class="main-banner__decor1">
-  <img src="assets/promo.svg" alt="decor" class="main-banner__decor3">
   <img src="assets/yarn-macrame.png" alt="three yarn moths" class="main-banner__pic">
   <div class="main-banner__description">
     <h2 class="main-banner__product-name">Yarn Macrametr</h2>
