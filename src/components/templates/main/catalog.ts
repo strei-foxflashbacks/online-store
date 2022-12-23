@@ -1,4 +1,7 @@
 import { productData } from "../../product-data";
+import clearPage from "../../clearPage";
+import setDefaultPage from "../../defaultPage";
+import getProductCard from "./product-card";
 
 const getCatalog = (): HTMLElement => {
   const catalog = document.createElement('section');
@@ -24,6 +27,11 @@ const getCatalog = (): HTMLElement => {
     catalog.append(container);
 
     container.onclick = (): void => {
+      clearPage();
+      setDefaultPage();
+
+      const main = document.querySelector('main') as HTMLElement;
+      main.append(getProductCard());
       console.log(element.id)
     }
   })
