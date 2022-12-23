@@ -4,7 +4,7 @@ const getFooter = (): HTMLElement => {
   footer.className = 'footer';
 
   footer.innerHTML = `
-  <img src="assets/logo.svg" alt="logo" class="logo">
+  <div class="logo">Hobby Art</div>
   <div class="autors-links">
     <a href="https://github.com/inna1305">inna1305</a>
     <a href="https://github.com/strei-foxflashbacks">strei-foxflashbacks</a>
