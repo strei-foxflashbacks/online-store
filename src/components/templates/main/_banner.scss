@@ -1,6 +1,4 @@
 .main-banner {
-  max-width: 1620px;
-  margin: auto;
   height: 462px;
   background: $additional-gradient;
   border-radius: 20px;
@@ -9,6 +7,7 @@
   align-items: start;
   gap: 50px;
   position: relative;
+  @include content-container;
 
   &__product-name {
     font-family: 'Spectral SC', serif;

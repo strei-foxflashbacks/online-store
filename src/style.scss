@@ -1,11 +1,11 @@
 @import "base/normalize.css";
 @import "base/variables";
-@import "components/catalog";
-@import "components/header";
+@import "components/templates/main/catalog";
+@import "components/templates/header/header";
 @import "components/buttons";
-@import "components/banner";
-@import "components/filters";
-@import "components/footer";
+@import "components/templates/main/banner";
+@import "components/templates/main/filters";
+@import "components/templates/footer/footer";
 
 body {
   background-color: $main-background;
