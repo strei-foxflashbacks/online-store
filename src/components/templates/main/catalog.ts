@@ -22,6 +22,10 @@ const getCatalog = (): HTMLElement => {
     </div>`;
 
     catalog.append(container);
+
+    container.onclick = (): void => {
+      console.log(element.id)
+    }
   })
 
   return catalog;
