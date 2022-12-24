@@ -6,6 +6,15 @@
   gap: 28px;
 }
 
+.three-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.two-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .catalog-card {
   width: 245px;
   height: 422px;
@@ -29,6 +38,19 @@
   &__price {
     font: $font-bold;
     align-self: flex-start;
+  }
+}
+
+.big-card {
+  width: 100%;
+  & > img {
+    max-width: 260px;
+  };
+}
+.biggest-card {
+  width: 100%;
+  & > img {
+    max-width: 300px;
   }
 }
 
