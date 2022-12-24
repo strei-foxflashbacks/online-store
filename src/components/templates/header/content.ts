@@ -4,9 +4,7 @@ const getContent = (): HTMLElement => {
   contentContainer.className = 'content-container';
 
   contentContainer.innerHTML = `
-  <h1>
-  <img src="assets/logo.svg" alt="logo" class="logo">
-  </h1>
+  <h1 class="logo">Hobby Art</h1>
   <div class="header-elements">
     <form action="" method="get" class="form">
       <input name="s" placeholder="Enter..." type="search" class="form__input">
