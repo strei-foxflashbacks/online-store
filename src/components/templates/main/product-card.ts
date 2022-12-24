@@ -1,4 +1,6 @@
-const getProductCard = (): HTMLElement => {
+import { IProductData } from "../../../types/IProductData";
+
+const getProductCard = (product: IProductData): HTMLElement => {
   const productCard = document.createElement('section');
 
   productCard.className = 'product-card';
@@ -6,34 +8,27 @@ const getProductCard = (): HTMLElement => {
   productCard.innerHTML = `
    <div class="photo-set">
     <div class="product-card__photos">
-        <img src="assets/1.jpg" alt="first product photo" class="product-card__photo">
-        <img src="assets/1-1.jpg" alt="second product photo" class="product-card__photo">
-        <img src="assets/1-2.jpg" alt="third product photo" class="product-card__photo">
+        <img src="${product.collection[0]}" alt="first product photo" class="product-card__photo">
+        <img src="${product.collection[1]}" alt="second product photo" class="product-card__photo">
+        <img src="${product.collection[2]}" alt="third product photo" class="product-card__photo">
     </div>
     <div class="photo-set__button"></div>
     <div class="photo-set__button"></div>
     <div class="photo-set__button"></div>
   </div>
   <div class="product-card__description">
-    <h2 class="product-card__product-name"></h2>
-    <p class="main-banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut
-      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-      aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-      pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-      laborum.</p>
+    <h2 class="product-card__product-name">${product.name}</h2>
+    <p class="main-banner__text">${product.description}</p>
          <table>
         <caption>Parameters</caption>
         <tbody>
             <tr>
                 <th>Brand</th>
-                <td></td>
+                <td>${product.brand}</td>
             </tr>
             <tr>
                 <th>Category</th>
-                <td></td>
+                <td>${product.category}</td>
             </tr>
             <tr>
                 <th>Structure</th>
@@ -41,12 +36,12 @@ const getProductCard = (): HTMLElement => {
             </tr>
             <tr>
                 <th>Stock</th>
-                <td></td>
+                <td>${product.stock}</td>
             </tr>
         </tbody>
     </table>
     <div class="product-card__cart-options">
-        <div class="product-card__price"></div>
+        <div class="product-card__price">${product.price} €</div>
         <button class="plus-minus-button">+/-</button>
         <button class="button_color"><a href="#"></a>Add to cart</button>
     </div>
