@@ -18,11 +18,14 @@
 
 .count-products-container {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 10px;
 }
 
 .icon-grid {
-  width: 30px;
+  width: 38px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .path-to-section {
