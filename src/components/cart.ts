@@ -1,13 +1,13 @@
 import { IProductData } from "../types/IProductData";
 import {productData} from "./product-data";
-
+//проверить как мапа реагирует на все функции класса
 export class Cart {
   private productsInCart: Map<IProductData, number>;
   constructor() {
     this.productsInCart = new Map();
   }
 
-  countOfProducts() {//уточнить корректно ли считать повторяющиеся продукты
+  countOfProducts() {
     let count = 0;
     for (const value of this.productsInCart) {
       count =+ value;
