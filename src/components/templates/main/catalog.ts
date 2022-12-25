@@ -31,7 +31,7 @@ const getCatalog = (): HTMLElement => {
       setDefaultPage();
 
       const main = document.querySelector('main') as HTMLElement;
-      main.append(getProductCard());
+      main.append(getProductCard(element));
       console.log(element.id)
     }
   })
