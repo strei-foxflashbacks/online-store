@@ -1,0 +1,111 @@
+.product-card {
+  @include content-container;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  height: $product-card-photo-size;
+  &__photos {
+    display: flex;
+    width: 1500px;
+    position: relative;
+  }
+
+  &__price {
+    font: $font-bold;
+    font-size: 28px;
+  }
+
+  &__photo {
+    max-height: $product-card-photo-size - 50px;
+    width: 100%;
+  }
+
+  &__product-name {
+    margin-top: 0;
+    max-width: $product-card-photo-size;
+  }
+
+  &__cart-options {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__description {
+    color: $font-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__table caption, th {
+    text-align: start;
+  }
+
+  &__table > caption {
+    font: $font-bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  &__btn-group {
+    border: 1px solid $button-inactive-color;
+    border-radius: 20px;
+    height:  35px;
+    width: 100px;
+    font-size: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+}
+th, td {
+  border-bottom: 2px dotted gray;
+}
+
+tr {
+  border: 1px solid #ccc;
+  height: 45px;
+}
+.photo-set {
+  width: $product-card-photo-size - 50px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.photo-set__button {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: solid 2px $button-inactive-color;
+}
+
+.photo-set__buttons {
+  display: flex;
+  gap: 5px;
+  align-self: center;
+  margin-top: 25px;
+}
+
+.plus-minus-button {
+  cursor: pointer;
+  font-size: 24px;
+  color: $button-inactive-color;
+  text-align: center;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+.plus-minus-button:active {
+  color: black;
+}
+.photo-and-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+
