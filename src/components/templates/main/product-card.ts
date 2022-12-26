@@ -12,11 +12,6 @@ const getProductCard = (product: IProductData): HTMLElement => {
         <img src="${product.collection[1]}" alt="second product photo" class="product-card__photo">
         <img src="${product.collection[2]}" alt="third product photo" class="product-card__photo">
     </div>
-    <div class="photo-set__buttons">
-        <div class="photo-set__button" id="photoButton1"></div>
-        <div class="photo-set__button" id="photoButton2"></div>
-        <div class="photo-set__button" id="photoButton3"></div>
-    </div>
   </div>
   <div class="product-card__description">
   <div>

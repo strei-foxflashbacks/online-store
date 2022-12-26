@@ -1,18 +1,17 @@
 .product-card {
   @include content-container;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 0.5fr 1.2fr;
   gap: 20px;
-  height: $product-card-photo-size;
   &__photos {
     display: flex;
-    width: 1500px;
+    flex-direction: column;
     position: relative;
   }
 
   &__price {
     font: $font-bold;
-    font-size: 28px;
+    font-size: 40px;
   }
 
   &__photo {
@@ -22,7 +21,9 @@
 
   &__product-name {
     margin-top: 0;
-    max-width: $product-card-photo-size;
+    margin-bottom: 36px;
+    font-size: 30px;
+    width: 576px;
   }
 
   &__cart-options {
@@ -65,10 +66,9 @@ th, td {
 
 tr {
   border: 1px solid #ccc;
-  height: 45px;
+  height: 100px;
 }
 .photo-set {
-  width: $product-card-photo-size - 50px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
