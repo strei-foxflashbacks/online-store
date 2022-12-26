@@ -21,7 +21,6 @@
   background: $gradient;
   display: flex;
   align-items: center;
-  @include side-paddings;
 }
 
 .logo {

@@ -17,6 +17,9 @@ $main-font: 400 16px 'Montserrat', sans-serif;
 $font-bold: 600 16px 'Montserrat', sans-serif;
 $additional-font: 400 16px 'Spectral SC', serif;
 
+//sizes
+$product-card-photo-size: 550px;
+
 
 @mixin content-container {
 max-width: 1620px;
@@ -37,6 +40,3 @@ max-width: 1620px;
   }
 }
 
-@mixin side-paddings {
-
-}
