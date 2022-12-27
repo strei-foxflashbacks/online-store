@@ -4,6 +4,7 @@ import getProductCard from "./templates/main/product-card";
 import { productData } from "./product-data";
 
 const getProductPage = (id: number) => {
+  window.scroll(0, 0)
   clearPage();
   setDefaultPage();
 
