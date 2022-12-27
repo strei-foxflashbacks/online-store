@@ -7,6 +7,11 @@ import getProductPage from '../productPage';
 const router = new Router({
   mode: 'history',
   root: '/',
+  hooks: {
+    before: function (newPage) {
+        console.info('Before page loads hook', newPage);
+    }
+  },
   page404: function (path) {
     alert('"/' + path + '" Page not found');
   },
