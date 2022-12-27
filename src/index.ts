@@ -13,6 +13,13 @@ import './components/functions/changeNumberCards.ts';
 import router from './components/router/router';
 
 // getMainPage();
-router.navigateTo('/')
+router.navigateTo('/');
+router.addUriListener()
+
+// window.onpopstate = () => {
+//   router.navigateTo(`${window.location.pathname}`)
+// }
+
+
 
 console.log('Hello, World!');
