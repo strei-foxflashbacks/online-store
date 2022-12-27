@@ -1,4 +1,9 @@
 import Router from 'vanilla-router';
+import getMainPage from '../mainPage';
+import { productData } from '../product-data';
+import getProductPage from '../productPage';
+// require.context('../../assets', false, /\.(?:ico|gif|png|jpg|jpeg|svg|ogg|mp3|wav)$/i)
+
 
 const router = new Router({
   mode: 'history',
@@ -8,3 +13,11 @@ const router = new Router({
   }
 })
 export default router;
+
+
+router.add(router.root, getMainPage)
+productData.forEach(product => {
+  router.add(`/catalog/${product.id}`, () => {
+    getProductPage(product.id)
+  })
+})

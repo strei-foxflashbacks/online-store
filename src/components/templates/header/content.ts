@@ -8,7 +8,7 @@ const getContent = (): HTMLElement => {
   <div class="header-elements">
     <form action="" method="get" class="form">
       <input name="s" placeholder="Enter..." type="search" class="form__input">
-      <button type="submit" class="form__search-button"><img src="./assets/search.svg" alt=""></button>
+      <button type="submit" class="form__search-button"><img src="../../assets/search.svg" alt=""></button>
     </form>
     <div class="cart-container"></div>
     <button type="button" class="button">Cart</button>

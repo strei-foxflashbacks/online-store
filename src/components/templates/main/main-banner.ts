@@ -17,7 +17,7 @@ const getMainBanner = (): HTMLElement => {
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
       laborum.</p>
     <button class="button_color"><a href="#catalog"></a>View all</button>
-    <img src="./assets/oval2.svg" alt="decor" class="main-banner__decor2">
+    <img src="../../assets/oval2.svg" alt="decor" class="main-banner__decor2">
   </div>`
 
   return mainBanner;
