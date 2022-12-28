@@ -66,11 +66,11 @@
   }
 
 }
-th, td {
+.product-card__table th, td {
   border-bottom: 2px dotted gray;
 }
 
-tr {
+.product-card__table tr {
   border: 1px solid #ccc;
   height: 100px;
 }
