@@ -1,0 +1,55 @@
+.cart-container {
+  @include content-container;
+  display: flex;
+  justify-content: space-between;
+}
+.product {
+  display: flex;
+}
+
+.total {
+  padding: 40px;
+  box-sizing: border-box;
+  max-width: 527px;
+ background-color: #d7d5d5;
+  border-radius: 15px;
+  &__counting {
+    vertical-align: bottom;
+    min-height: 170px;
+  }
+
+  &__counting td {
+    text-align: end;
+    border: none;
+  }
+  &__counting th {
+    text-align: start;
+  }
+  &__sum th {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  &__sum td {
+    font-size: 52px;
+  }
+  & .button_color {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.total__sum-without-discount {
+  font-size: 24px;
+}
+
+.promocode {
+  border: 2px solid $button-inactive-color;
+  border-radius: 33px;
+  height: 33px;
+  padding-left: 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.title {
+  margin: 0;
+}
