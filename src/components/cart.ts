@@ -26,18 +26,10 @@ export class Cart {
     return sumOfProducts;
   }
   addProductToCart(product: IProductData) {
-    let iterator = this.productsInCart.entries();//entries - [ключ-продукт, значение-количество]
-    for (const productInCart of this.productsInCart) {
-      let productObj = iterator.next().value[0];
-      let countProductInCart = iterator.next().value[1];
-      //если совпали имена текущего добавляемого продукта и уже хранящегося в мапе
-      //+ количество на складе не превышает уже добавленное, увеличить количество
-      if (productObj.name === product.name && product.stock > countProductInCart) {
-        iterator.next().value[1] =+ 1;
-      }else{
-        //иначе добавить новый один продукт в мапу
-        this.productsInCart.set(product, 1);
-      }
+    if (this.productsInCart.has(product)) {
+      this.productsInCart.set(product, (this.productsInCart.get(product)! + 1))
+    } else {
+      this.productsInCart.set(product, 1);
     }
     //добавить сравнение значения (количества продуктов) с остатком на складе
 

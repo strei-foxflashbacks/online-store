@@ -1,3 +1,8 @@
+import { productData } from "../../product-data";
+import clearPage from "../../clearPage";
+import setDefaultPage from "../../defaultPage";
+import getProductCard from "./product-card";
+
 const getCatalog = (): HTMLElement => {
   const catalog = document.createElement('section');
 
