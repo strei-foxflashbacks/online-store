@@ -2,8 +2,10 @@ import setDefaultPage from "./defaultPage";
 import getMainBanner from "./templates/main/main-banner";
 import getSortContainer from "./templates/main/sort-container";
 import getMainContainer from "./templates/main/main-container";
+import clearPage from "./clearPage";
 
 const getMainPage = () => {
+  clearPage();
   setDefaultPage();
 
   const main = document.querySelector('main') as HTMLElement;

@@ -7,6 +7,7 @@
     "lint": "eslint . --ext .ts"
   },
   "devDependencies": {
+    "@types/node": "^18.11.18",
     "@types/webpack-env": "^1.18.0",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
@@ -30,5 +31,8 @@
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "vanilla-router": "^1.2.8"
   }
 }

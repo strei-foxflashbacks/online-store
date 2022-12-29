@@ -10,7 +10,7 @@ const getFooter = (): HTMLElement => {
     <a href="https://github.com/strei-foxflashbacks">strei-foxflashbacks</a>
     <div>2022</div>
   </div>
-  <img src="assets/rs_school_js.svg" alt="logo rs school" class="rs-logo">`;
+  <img src="../assets/rs_school_js.svg" alt="logo rs school" class="rs-logo">`;
 
   return footer;
 }
