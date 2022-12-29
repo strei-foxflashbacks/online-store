@@ -36,6 +36,10 @@ const baseConfig = {
         filename: 'index.js',
         path: path.resolve(__dirname, './dist'),
         assetModuleFilename: 'assets/[name][ext]',
+        publicPath: '/',
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
