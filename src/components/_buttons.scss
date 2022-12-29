@@ -15,42 +15,37 @@
     font-size: 16px;
     width: 185px;
     text-transform: uppercase;
+    cursor: pointer;
+    height: 38px;
+    border-radius: 30px;
+  }
+  &_color:hover {
+    color: #424242;
+  }
+  &_color:active {
+    background: none;
+    border: 2px solid $brand-color;
+    color: $brand-color;
   }
 }
 
-.button_color {
-  cursor: pointer;
-  height: 38px;
-  border-radius: 30px;
-}
-
-.button_color:active {
-  color: $font-color;
-  background-color: rgba(255, 255, 255, 0);
-  border: 2px solid $font-color;
-}
-
-.button_color:hover {
-  background: $gradient-hover;
-  border: none;
-  color: $light-on-dark;
-}
 
 
 .cart-counter {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 17px;
   background-color: $additional-color;
   display: block;
   position: absolute;
-  font-size: 10px;
+  font-size: 11px;
   color: black;
   top: -8px;
-  right: 15px;
+  right: 27px;
   text-align: center;
   padding-top: 4px;
   box-sizing: border-box;
+
 }
 
 .form {
@@ -71,6 +66,15 @@
   &:active {
     background-color: rgba(255, 255, 255, 0);
   }
+}
+
+.cart-button {
+  height: 70px;
+  border-radius: 70px;
+  font-size: 23px;
+  width: 145px;
+  background-color: white;
+  cursor: pointer;
 }
 
 
