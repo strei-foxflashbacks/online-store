@@ -1,7 +1,4 @@
-// import clearPage from "../../clearPage";
-// import setDefaultPage from "../../defaultPage";
 import router from "../../router/router";
-// import getCart from "../main/cart/cart";
 
 const getContent = (): HTMLElement => {
   const contentContainer = document.createElement('div');
@@ -18,11 +15,6 @@ const getContent = (): HTMLElement => {
     const buttonCart = contentContainer.lastElementChild.firstElementChild as HTMLElement;
     buttonCart.onclick = (): void => {
       router.navigateTo('/cart')
-      // clearPage();
-      // setDefaultPage();
-
-      // const main = document.querySelector('main') as HTMLElement;
-      // main.append(getCart());
     }
   }
 
