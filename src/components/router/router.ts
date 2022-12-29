@@ -1,8 +1,8 @@
 import Router from 'vanilla-router';
+import getCartPage from '../cartPage';
 import getMainPage from '../mainPage';
 import { productData } from '../product-data';
 import getProductPage from '../productPage';
-
 
 const router = new Router({
   mode: 'history',
@@ -25,3 +25,4 @@ productData.forEach(product => {
     getProductPage(product.id)
   })
 })
+router.add('/cart', getCartPage)

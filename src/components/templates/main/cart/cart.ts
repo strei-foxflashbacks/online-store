@@ -1,6 +1,7 @@
 import { IProductData } from "../../../../types/IProductData";
 import {productData} from "../../../product-data";
 import getProductCardInCart from "./product-card-in-cart";
+
 const testArray: IProductData[] = [productData[0], productData[3], productData[8]];
 const getCart = (): HTMLElement => {
   const cart = document.createElement('section');
