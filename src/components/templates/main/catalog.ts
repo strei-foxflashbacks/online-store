@@ -1,7 +1,8 @@
 import { productData } from "../../product-data";
-import clearPage from "../../clearPage";
-import setDefaultPage from "../../defaultPage";
-import getProductCard from "./product-card";
+// import clearPage from "../../clearPage";
+// import setDefaultPage from "../../defaultPage";
+// import getProductCard from "./product-card";
+import router from "../../router/router";
 
 const getCatalog = (): HTMLElement => {
   const catalog = document.createElement('section');
@@ -27,12 +28,12 @@ const getCatalog = (): HTMLElement => {
     catalog.append(container);
 
     container.onclick = (): void => {
-      clearPage();
-      setDefaultPage();
+      // clearPage();
+      router.navigateTo(`/catalog/${element.id}`)
+      // setDefaultPage();
 
-      const main = document.querySelector('main') as HTMLElement;
-      main.append(getProductCard(element));
-      console.log(element.id)
+      // const main = document.querySelector('main') as HTMLElement;
+      // main.append(getProductCard(element));
     }
   })
 
