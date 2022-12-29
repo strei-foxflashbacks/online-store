@@ -1,6 +1,6 @@
 import clearPage from "../../clearPage";
 import setDefaultPage from "../../defaultPage";
-import getCart from "../main/cart";
+import getCart from "../main/cart/cart";
 
 const getContent = (): HTMLElement => {
   const contentContainer = document.createElement('div');
@@ -21,7 +21,6 @@ const getContent = (): HTMLElement => {
 
       const main = document.querySelector('main') as HTMLElement;
       main.append(getCart());
-      console.log('test from cart page');
     }
   }
 
