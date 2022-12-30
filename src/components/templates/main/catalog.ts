@@ -1,7 +1,4 @@
 import { productData } from "../../product-data";
-// import clearPage from "../../clearPage";
-// import setDefaultPage from "../../defaultPage";
-// import getProductCard from "./product-card";
 import router from "../../router/router";
 
 const getCatalog = (): HTMLElement => {
@@ -28,12 +25,7 @@ const getCatalog = (): HTMLElement => {
     catalog.append(container);
 
     container.onclick = (): void => {
-      // clearPage();
       router.navigateTo(`/catalog/${element.id}`)
-      // setDefaultPage();
-
-      // const main = document.querySelector('main') as HTMLElement;
-      // main.append(getProductCard(element));
     }
   })
 

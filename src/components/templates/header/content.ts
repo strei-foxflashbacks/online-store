@@ -1,6 +1,4 @@
-import clearPage from "../../clearPage";
-import setDefaultPage from "../../defaultPage";
-import getCart from "../main/cart/cart";
+import router from "../../router/router";
 
 const getContent = (): HTMLElement => {
   const contentContainer = document.createElement('div');
@@ -16,11 +14,7 @@ const getContent = (): HTMLElement => {
   if (contentContainer.lastElementChild && contentContainer.lastElementChild.firstElementChild) {
     const buttonCart = contentContainer.lastElementChild.firstElementChild as HTMLElement;
     buttonCart.onclick = (): void => {
-      clearPage();
-      setDefaultPage();
-
-      const main = document.querySelector('main') as HTMLElement;
-      main.append(getCart());
+      router.navigateTo('/cart')
     }
   }
 
