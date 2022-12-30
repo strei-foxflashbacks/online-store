@@ -9,7 +9,7 @@ const getFilters = (): HTMLElement => {
       <fieldset class="filter-container__item">
         <legend class="filter-container__title">Category</legend>
         <div class="filter-container__section">
-          <input type="checkbox" id="knittingNeedles" name="knittingNeedles" checked>
+          <input type="checkbox" id="knittingNeedles" name="knittingNeedles">
           <label for="knittingNeedles">Knitting Needles</label>
         </div>
         <div class="filter-container__section">
