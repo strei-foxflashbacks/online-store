@@ -12,15 +12,15 @@ const getCatalog = (): HTMLElement => {
   productData.forEach(element => {
     const container = document.createElement('div');
 
+    container.setAttribute('id', `${element.id}`)
+    container.className = 'container'
+    container.classList.add('catalog-card')
+
     container.innerHTML = `
-    <div id="${element.id}" class="container">
-      <div class="catalog-card">
-        <img src="${element.photo}" alt="${element.name}" class="catalog-card__photo">
-        <div class="catalog-card__name">${element.name}</div>
-        <div class="catalog-card__price">${element.price} €</div>
-        <button class="button">Add to cart</button>
-      </div>
-    </div>`;
+    <img src="${element.photo}" alt="${element.name}" class="catalog-card__photo">
+    <div class="catalog-card__name">${element.name}</div>
+    <div class="catalog-card__price">${element.price} €</div>
+    <button class="button">Add to cart</button>`;
 
     catalog.append(container);
 
