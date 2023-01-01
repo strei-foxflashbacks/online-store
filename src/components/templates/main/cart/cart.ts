@@ -40,6 +40,12 @@ const getCart = (): HTMLElement => {
                 <input type="text" name="promo-code" class="promocode"/>
             </td>
         </tr>
+        <tr>
+            <th>Applied:</th>
+            <td>
+                <div class="total__promo-container"></div>
+            </td>
+        </tr>
     </tbody>
     <tfoot class="total__sum">
         <tr>
