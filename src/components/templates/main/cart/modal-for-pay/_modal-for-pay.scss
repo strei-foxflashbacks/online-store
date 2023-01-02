@@ -5,9 +5,11 @@
   width: 100%;
   height: 100%;
   z-index: 100;
+  visibility: hidden;
 }
 
 .modal-pay {
+  visibility: hidden;
   width: 550px;
   background-color: white;
   border-radius: 20px;
