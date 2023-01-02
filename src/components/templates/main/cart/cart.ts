@@ -7,6 +7,16 @@ const getCart = (): HTMLElement => {
   const cart = document.createElement('section');
 
   cart.className = 'cart-container';
+  const breadCrumbs = document.createElement('div');
+  breadCrumbs.className = 'path-to-section';
+  breadCrumbs.innerHTML = `
+    <a href="#" class="path-to-section__item" id="back">Back </a>
+      <span class="arrow">←
+      </span>
+      <a href="#" class="path-to-section__item" id="main"> Main </a><span class="arrow">→
+      </span><span class="path-to-section__item" id="cart"> Cart </a>
+  `;
+  cart.append(breadCrumbs);
 
   const title = document.createElement('h2');
   title.className = 'title';
