@@ -20,6 +20,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .icon-grid {
@@ -32,6 +34,7 @@
   &__item {
     text-decoration: none;
   }
+  margin-bottom: 20px;
 }
 
 
@@ -63,4 +66,9 @@ border-bottom: 1px solid $button-inactive-color;
 
 .filters button {
   width: 100%;
+}
+
+.count-and-sort {
+  display: flex;
+  gap: 40px;
 }
