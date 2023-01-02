@@ -8,11 +8,13 @@
 @import "components/templates/footer/footer";
 @import "components/templates/main/product-card";
 @import "components/templates/main/cart/cart";
+@import "components/templates/main/cart/modal-for-pay/modal-for-pay";
 
 body {
   background-color: $main-background;
   color: $font-color;
   font: $main-font;
+  position: relative;
 }
 
 fieldset {
