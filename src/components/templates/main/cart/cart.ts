@@ -64,7 +64,14 @@ const getCart = (): HTMLElement => {
         </tr>
     </tfoot>
   </table>
-  <button class="button_color">place order</button>`
+`
+
+  const orderButton = document.createElement('button');
+  orderButton.id = 'order';
+  orderButton.className = 'button_color';
+  orderButton.innerHTML = 'place order';
+
+  total.append(orderButton);
   productsAndTotal.append(total);
   cart.append(productsAndTotal);
 
