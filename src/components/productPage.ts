@@ -2,8 +2,7 @@ import clearPage from "./clearPage"
 import setDefaultPage from "./defaultPage";
 import getProductCard from "./templates/main/product-card";
 import { productData } from "./product-data";
-import './router/routerFuncs'
-import {getMainNavigate, goBack} from "./router/routerFuncs";
+import {getMainNavigate, goBack} from "./router/router";
 
 const getProductPage = (id: number) => {
   window.scroll(0, 0)
