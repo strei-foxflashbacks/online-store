@@ -7,6 +7,16 @@ const getCart = (): HTMLElement => {
   const cart = document.createElement('section');
 
   cart.className = 'cart-container';
+  const breadCrumbs = document.createElement('div');
+  breadCrumbs.className = 'path-to-section';
+  breadCrumbs.innerHTML = `
+    <a href="#" class="path-to-section__item" id="back">Back </a>
+      <span class="arrow">←
+      </span>
+      <a href="#" class="path-to-section__item" id="main"> Main </a><span class="arrow">→
+      </span><span class="path-to-section__item" id="cart"> Cart </a>
+  `;
+  cart.append(breadCrumbs);
 
   const title = document.createElement('h2');
   title.className = 'title';
@@ -40,6 +50,12 @@ const getCart = (): HTMLElement => {
                 <input type="text" name="promo-code" class="promocode"/>
             </td>
         </tr>
+        <tr>
+            <th>Applied:</th>
+            <td>
+                <div class="total__promo-container"></div>
+            </td>
+        </tr>
     </tbody>
     <tfoot class="total__sum">
         <tr>
@@ -48,7 +64,14 @@ const getCart = (): HTMLElement => {
         </tr>
     </tfoot>
   </table>
-  <button class="button_color">place order</button>`
+`
+
+  const orderButton = document.createElement('button');
+  orderButton.id = 'order';
+  orderButton.className = 'button_color';
+  orderButton.innerHTML = 'place order';
+
+  total.append(orderButton);
   productsAndTotal.append(total);
   cart.append(productsAndTotal);
 

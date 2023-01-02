@@ -1,10 +1,23 @@
 import { IProductData } from "../../../types/IProductData";
 
 const getProductCard = (product: IProductData): HTMLElement => {
+  const productInfo = document.createElement('div');
+  productInfo.className = 'product-info';
+
+  const breadCrumbs = document.createElement('div');
+  breadCrumbs.className = 'path-to-section';
+  breadCrumbs.innerHTML = `
+      <a href="#" class="path-to-section__item" id="back">Back </a>
+      <span class="arrow">←
+      </span>
+      <a href="#" class="path-to-section__item" id="main"> Main </a><span class="arrow">→
+      </span><span class="path-to-section__item" id="cart"> ${product.name} </a>
+  `;
+  productInfo.append(breadCrumbs);
+
+
   const productCard = document.createElement('section');
-
   productCard.className = 'product-card';
-
   productCard.innerHTML = `
    <div class="photo-set">
     <div class="product-card__photos">
@@ -49,8 +62,9 @@ const getProductCard = (product: IProductData): HTMLElement => {
         <button class="button_color"><a href="#"></a>Add to cart</button>
     </div>
   </div>`
+  productInfo.append(productCard);
 
-  return productCard;
+  return productInfo;
 }
 
 export default getProductCard;

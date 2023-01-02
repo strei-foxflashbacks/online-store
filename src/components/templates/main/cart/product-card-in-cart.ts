@@ -14,6 +14,7 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
             <button class="plus-minus-button minus" id="minus">-</button>
         </div>
         <div class="product__counter" id="counterInCart">1</div>
+        <div class="product__counter">out of ${product.stock}</div>
         <button class="delete-button">
             <img src="../../../../assets/trash.svg" alt="delete icon" class="delete-icon">
         </button>
