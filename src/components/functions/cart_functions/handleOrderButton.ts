@@ -1,4 +1,3 @@
-import getModalForPay from "../../templates/main/cart/modal-for-pay/modal-for-pay";
 
 export function handleOrderButton() {
   console.log('handle button');
