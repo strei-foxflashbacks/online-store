@@ -1,4 +1,9 @@
+.product-info {
+  @include content-container;
+}
+
 .product-card {
+  margin-top: 20px;
   @include content-container;
   display: grid;
   grid-template-columns: 0.5fr 1.2fr;

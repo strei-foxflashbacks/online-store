@@ -16,7 +16,7 @@
   &__name {
     font-size: 18px;
     font-weight: 600;
-    min-width: 560px;
+    width: 500px;
   }
   &__price {
     font-weight: 600;
@@ -30,10 +30,16 @@
   max-width: 527px;
  background-color: #d7d5d5;
   border-radius: 15px;
-  max-height: 344px;
+  height: 100%;
+
+  & tr {
+    margin: 10px 0;
+  }
+
   &__counting {
     vertical-align: bottom;
     min-height: 170px;
+    border-spacing: 15px;
   }
 
   &__counting td {
@@ -54,11 +60,27 @@
     width: 100%;
     margin-top: 20px;
   }
+  &__promo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__promo-word {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+    border-radius: 33px;
+    padding: 9px 9px 9px 20px;
+
+  }
+  &__sum-without-discount {
+    font-size: 24px;
+  }
 }
 
-.total__sum-without-discount {
-  font-size: 24px;
-}
+
 
 .promocode {
   border: 2px solid $button-inactive-color;
