@@ -9,66 +9,66 @@ const getFilters = (): HTMLElement => {
       <fieldset class="filter-container__item">
         <legend class="filter-container__title">Category</legend>
         <div class="filter-container__section">
-          <input type="checkbox" id="knittingNeedles" name="knittingNeedles" checked>
+          <input class="category-filter" type="checkbox" id="knittingNeedles" name="Knitting Needles">
           <label for="knittingNeedles">Knitting Needles</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="knittingBags" name="knittingBags">
+          <input class="category-filter" type="checkbox" id="knittingBags" name="Knitting Bags">
           <label for="knittingBags">Knitting Bags</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="sewingMachines" name="sewingMachines">
+          <input class="category-filter" type="checkbox" id="sewingMachines" name="Sewing Machines">
           <label for="sewingMachines">Sewing Machines</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="sewingBoxes" name="sewingBoxes">
+          <input class="category-filter" type="checkbox" id="sewingBoxes" name="Sewing Boxes">
           <label for="sewingBoxes">Sewing Boxes</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="needleFeltingKits" name="needleFeltingKits">
+          <input class="category-filter" type="checkbox" id="needleFeltingKits" name="Needle Felting Kits">
           <label for="needleFeltingKits">Needle Felting Kits</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="yarn" name="yarn">
+          <input class="category-filter" type="checkbox" id="yarn" name="Yarn">
           <label for="yarn">Yarn</label>
         </div>
       </fieldset>
       <fieldset class="filter-container__item">
         <legend class="filter-container__title">Brand</legend>
         <div class="filter-container__section">
-          <input type="checkbox" id="womensInstitute" name="womensInstitute">
+          <input class="brand-filter" type="checkbox" id="womensInstitute" name="Women's Institute">
           <label for="womensInstitute">Women's Institute</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="knitcraft" name="knitcraft">
+          <input class="brand-filter" type="checkbox" id="knitcraft" name="Knitcraft">
           <label for="knitcraft">Knitcraft</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="pony" name="pony">
+          <input class="brand-filter" type="checkbox" id="pony" name="Pony">
           <label for="pony">Pony</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="hayfield" name="hayfield">
+          <input class="brand-filter" type="checkbox" id="hayfield" name="Hayfield">
           <label for="hayfield">Hayfield</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="peterPan" name="peterPan">
+          <input class="brand-filter" type="checkbox" id="peterPan" name="Peter Pan">
           <label for="peterPan">Peter Pan</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="jamesCBrett" name="jamesCBrett">
+          <input class="brand-filter" type="checkbox" id="jamesCBrett" name="James C Brett">
           <label for="jamesCBrett">James C Brett</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="hobbyCraft" name="hobbyCraft">
+          <input class="brand-filter" type="checkbox" id="hobbyCraft" name="Hobbycraft">
           <label for="hobbyCraft">Hobbycraft</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="janome" name="janome">
+          <input class="brand-filter" type="checkbox" id="janome" name="Janome">
           <label for="janome">Janome</label>
         </div>
         <div class="filter-container__section">
-          <input type="checkbox" id="trimits" name="trimits">
+          <input class="brand-filter" type="checkbox" id="trimits" name="Trimits">
           <label for="trimits">Trimits</label>
         </div>
       </fieldset>
