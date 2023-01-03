@@ -16,13 +16,11 @@ const brandFilter = () => {
       const brandFiltered = filterableData.filter(element => element.brand === brand.name)
       const filteredIds = brandFiltered.map(element => `${element.id}`)
 
+      while (productCatalog.firstChild) {
+        productCatalog.removeChild(productCatalog.firstChild)
+      }
+
       if (brand.checked === true) {
-
-        while (productCatalog.firstChild) {
-          productCatalog.removeChild(productCatalog.firstChild)
-        }
-
-
         catalogQueue.forEach(element => {
           if (filteredIds.includes(element.id)) {
             output.push(element)
@@ -31,11 +29,6 @@ const brandFilter = () => {
         })
       }
       else if (brand.checked === false) {
-
-        while (productCatalog.firstChild) {
-          productCatalog.removeChild(productCatalog.firstChild)
-        }
-
         output.forEach(element => {
           if (filteredIds.includes(element.id)) {
             output.splice(output.indexOf(element), filteredIds.length)
