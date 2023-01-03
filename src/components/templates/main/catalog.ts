@@ -1,5 +1,6 @@
 import { productData } from "../../product-data";
 import router from "../../router/router";
+import {addProductToCart} from "../../functions/addProductToCart";
 
 const getCatalog = (): HTMLElement => {
   const catalog = document.createElement('section');
@@ -12,18 +13,30 @@ const getCatalog = (): HTMLElement => {
   productData.forEach(element => {
     const container = document.createElement('div');
 
-    container.innerHTML = `
-    <div id="${element.id}" class="container">
-      <div class="catalog-card">
+    const containerForCard = document.createElement('div');
+    containerForCard.id = `${element.id}`;
+    containerForCard.className = 'container';
+
+
+      const catalogCard = document.createElement('div');
+      catalogCard.className = 'catalog-card';
+      catalogCard.innerHTML = `
         <img src="${element.photo}" alt="${element.name}" class="catalog-card__photo">
         <div class="catalog-card__name">${element.name}</div>
-        <div class="catalog-card__price">${element.price} €</div>
-        <button class="button">Add to cart</button>
-      </div>
-    </div>`;
+        <div class="catalog-card__price">${element.price} €</div>`;
 
+      const addToCartButton = document.createElement('button');
+      addToCartButton.className = 'button';
+      addToCartButton.innerText = 'Add to cart';
+      addToCartButton.id = 'buttonFromCatalog';
+        catalogCard.insertAdjacentElement('beforeend', addToCartButton);
+        catalogCard.insertAdjacentHTML('beforeend', '</div>');
+
+    containerForCard.append(catalogCard);
+    container.append(containerForCard);
     catalog.append(container);
 
+    addToCartButton.addEventListener('click', addProductToCart);
     container.onclick = (): void => {
       router.navigateTo(`/catalog/${element.id}`)
     }
