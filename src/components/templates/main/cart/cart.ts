@@ -1,11 +1,21 @@
 import { IProductData } from "../../../../types/IProductData";
 import {productData} from "../../../product-data";
 import getProductCardInCart from "./product-card-in-cart";
+import getModalForPay from "./modal-for-pay/modal-for-pay";
 
 const testArray: IProductData[] = [productData[0], productData[3], productData[8]];
 const getCart = (): HTMLElement => {
   const cart = document.createElement('section');
 
+  //фон для модалки
+  const darkBackground = document.createElement('div');
+  darkBackground.className = 'dark-background';
+  darkBackground.id = 'darkBackground';
+  document.body.prepend(darkBackground);
+  document.body.prepend(getModalForPay());
+
+
+//крошки
   cart.className = 'cart-container';
   const breadCrumbs = document.createElement('div');
   breadCrumbs.className = 'path-to-section';
@@ -18,11 +28,15 @@ const getCart = (): HTMLElement => {
   `;
   cart.append(breadCrumbs);
 
+
+  //название страницы
   const title = document.createElement('h2');
   title.className = 'title';
   title.innerHTML = 'My Cart';
   cart.append(title);
 
+
+  //карточки добавленных в корзину товаров
   const productsAndTotal = document.createElement('div');
   productsAndTotal.className = 'products-total-container';
 
@@ -34,6 +48,7 @@ const getCart = (): HTMLElement => {
   productsAndTotal.append(products);
 
 
+  //сумма заказа, скидки, промокоды
   const total = document.createElement('div');
   total.className = 'total';
   total.innerHTML =
@@ -66,6 +81,7 @@ const getCart = (): HTMLElement => {
   </table>
 `
 
+  //кнопка заказа
   const orderButton = document.createElement('button');
   orderButton.id = 'order';
   orderButton.className = 'button_color';

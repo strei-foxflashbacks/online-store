@@ -5,11 +5,6 @@ import {IPromoCode} from "../../../types/types";
 
  export function handlePromoInput() {
    const promoInput = document.querySelector('.promocode') as HTMLInputElement;
-   if (promoInput) {
-     // promoInput.oninput = () => getPromoElement(promoInput.value);
-     promoInput.addEventListener('input', handlePromoInput);
-   }
-
 
     const containerPromo = document.querySelector('.total__promo-container');
     if (isRightPromoCode(promoInput.value)) {

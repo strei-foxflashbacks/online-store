@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function changeNumberCards(event: Event) {
-    console.log('test2');
     if (event.target === THREE_CARDS && CATALOG && PRODUCT_CARDS) {
       CATALOG.classList.remove('two-cards');
       CATALOG.classList.add('three-cards');
