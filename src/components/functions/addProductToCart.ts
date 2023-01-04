@@ -34,10 +34,10 @@ export function toggleProduct(event: Event) {
 }
 
 function toggleButtonText(button: HTMLElement) {
-  if (button.innerText === 'Added') {
+  if (button.innerText === 'Delete from Cart') {
     button.innerText = 'Add to Cart';
   } else {
-    button.innerText = 'Added';
+    button.innerText = 'Delete from Cart';
   }
 }
 
