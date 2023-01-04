@@ -1,6 +1,5 @@
 
 export function handleOrderButton() {
-  console.log('handle button');
 
   const modal = document.querySelector('.modal-pay') as HTMLElement;
   const darkBackground = document.querySelector('#darkBackground') as HTMLElement;

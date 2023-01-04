@@ -2,6 +2,7 @@ import { IProductData } from "../../../../types/IProductData";
 import {productData} from "../../../product-data";
 import getProductCardInCart from "./product-card-in-cart";
 import getModalForPay from "./modal-for-pay/modal-for-pay";
+import {handleOrderButton} from "../../../functions/cartPageFunctions/handleOrderButton";
 
 const testArray: IProductData[] = [productData[0], productData[3], productData[8]];
 const getCart = (): HTMLElement => {
@@ -90,6 +91,8 @@ const getCart = (): HTMLElement => {
   total.append(orderButton);
   productsAndTotal.append(total);
   cart.append(productsAndTotal);
+
+  orderButton.addEventListener('click', handleOrderButton);
 
   return cart;
 }
