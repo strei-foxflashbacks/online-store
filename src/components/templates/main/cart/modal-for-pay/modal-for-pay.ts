@@ -4,7 +4,7 @@ import {
   handleCVV,
   handleValidInput,
   handleConfirmButton
-} from "../../../../functions/validateModal";
+} from "../../../../functions/cartPageFunctions/validateModal";
 
 
 const getModalForPay = () => {

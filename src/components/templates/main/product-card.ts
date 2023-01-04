@@ -1,6 +1,6 @@
 import { IProductData } from "../../../types/IProductData";
 import {toggleProduct} from "../../functions/addProductToCart";
-import {handleOrderButton} from "../../functions/cart_functions/handleOrderButton";
+import {handleOrderButton} from "../../functions/cartPageFunctions/handleOrderButton";
 import getModalForPay from "./cart/modal-for-pay/modal-for-pay";
 
 const getProductCard = (product: IProductData): HTMLElement => {
@@ -78,18 +78,6 @@ const getProductCard = (product: IProductData): HTMLElement => {
   buyNowButton.innerText = 'Buy now';
   buyNowButton.className = 'button_color';
   buyNowButton.id = 'buyNowButton';
-
-  //   const plusButton = document.createElement('button');
-  //   plusButton.classList.add('plus-minus-button', 'plus');
-  //   plusButton.id = 'plus';
-  //   plusButton.innerText = '+';
-  //
-  // const minusButton = document.createElement('button');
-  // minusButton.classList.add('plus-minus-button', 'minus');
-  // minusButton.id = 'minus';
-  // minusButton.innerText = '-';
-
-  //btnGroup.append(plusButton, minusButton);
 
   const addingButton = document.createElement('button');
   addingButton.className = 'button';
