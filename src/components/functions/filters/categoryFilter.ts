@@ -27,7 +27,7 @@ const categoryFilter = () => {
             output.forEach(node => productCatalog.append(node))
           }
         })
-        history.pushState(null, '', `?category=${category.name.toLowerCase()}`)
+        history.pushState(null, '', `${window.location.search}/?category=${category.name.toLowerCase()}`)
       }
       else if (category.checked === false) {
         output.forEach(element => {
