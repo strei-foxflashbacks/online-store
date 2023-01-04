@@ -25,8 +25,11 @@ const getProductCard = (product: IProductData): HTMLElement => {
         <img src="${product.collection[1]}" alt="second product photo" class="product-card__photo">
         <img src="${product.collection[2]}" alt="third product photo" class="product-card__photo">
     </div>
-  </div>
-  <div class="product-card__description">
+  </div>`
+
+    const description = document.createElement('div');
+  description.className = 'product-card__description';
+  description.innerHTML = `
   <div>
     <h2 class="product-card__product-name">${product.name}</h2>
     <p class="product-card__description">${product.description}</p>
@@ -51,17 +54,42 @@ const getProductCard = (product: IProductData): HTMLElement => {
                 <td>${product.stock}</td>
             </tr>
         </tbody>
-    </table>
-    <div class="product-card__cart-options">
-        <div class="product-card__price">${product.price} €</div>
-        <div class="product-card__btn-group">
-            <button class="plus-minus-button plus">+</button>
-            <button class="plus-minus-button minus">-</button>
+    </table>`
 
-        </div>
-        <button class="button_color"><a href="#"></a>Add to cart</button>
-    </div>
-  </div>`
+    const cartOptions = document.createElement('div');
+    cartOptions.className = 'product-card__cart-options';
+
+    const price = document.createElement('div');
+    price.className = 'product-card__price';
+    price.innerText = `${product.price} €`;
+
+    const buyNowButton = document.createElement('button');
+  buyNowButton.innerText = 'Buy now';
+  buyNowButton.className = 'button_color';
+
+  //   const plusButton = document.createElement('button');
+  //   plusButton.classList.add('plus-minus-button', 'plus');
+  //   plusButton.id = 'plus';
+  //   plusButton.innerText = '+';
+  //
+  // const minusButton = document.createElement('button');
+  // minusButton.classList.add('plus-minus-button', 'minus');
+  // minusButton.id = 'minus';
+  // minusButton.innerText = '-';
+
+  //btnGroup.append(plusButton, minusButton);
+
+  const addingButton = document.createElement('button');
+  addingButton.className = 'button';
+  addingButton.innerText = 'Add to cart';
+  addingButton.id = 'addingButton';
+
+
+  cartOptions.append(price);
+  cartOptions.append(addingButton);
+  cartOptions.append(buyNowButton);
+  description.append(cartOptions);
+  productCard.append(description);
   productInfo.append(productCard);
 
   return productInfo;
