@@ -13,10 +13,7 @@ const getCartPage = () => {
   const main = document.querySelector('main') as HTMLElement;
 
   main.append(getCart());
-  const orderButton = document.querySelector('#order');
-  if (orderButton) {
-    orderButton.addEventListener('click', handleOrderButton);
-  }
+
   const promoInput = document.querySelector('.promocode') as HTMLInputElement;
   if (promoInput) {
     promoInput.addEventListener('input', handlePromoInput);
