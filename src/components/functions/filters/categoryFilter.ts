@@ -27,6 +27,7 @@ const categoryFilter = () => {
             output.forEach(node => productCatalog.append(node))
           }
         })
+        history.pushState(null, '', `?category=${category.name.toLowerCase().replace(/ /g, '&')}`)
       }
       else if (category.checked === false) {
         output.forEach(element => {
@@ -41,6 +42,7 @@ const categoryFilter = () => {
             productCatalog.append(node)
           })
         }
+        history.replaceState(null, '', `${window.location.pathname}`);
       }
     })
   })

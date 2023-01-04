@@ -27,6 +27,7 @@ const brandFilter = () => {
             output.forEach(node => productCatalog.append(node))
           }
         })
+        history.pushState(null, '', `?brand=${brand.name.toLowerCase().replace(/ /g, '&')}`)
       }
       else if (brand.checked === false) {
         output.forEach(element => {
@@ -41,6 +42,7 @@ const brandFilter = () => {
             productCatalog.append(node)
           })
         }
+        history.replaceState(null, '', `${window.location.pathname}`);
       }
     })
   })
