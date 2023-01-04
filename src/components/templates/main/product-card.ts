@@ -77,6 +77,7 @@ const getProductCard = (product: IProductData): HTMLElement => {
     const buyNowButton = document.createElement('button');
   buyNowButton.innerText = 'Buy now';
   buyNowButton.className = 'button_color';
+  buyNowButton.id = 'buyNowButton';
 
   //   const plusButton = document.createElement('button');
   //   plusButton.classList.add('plus-minus-button', 'plus');
@@ -102,6 +103,9 @@ const getProductCard = (product: IProductData): HTMLElement => {
   description.append(cartOptions);
   productCard.append(description);
   productInfo.append(productCard);
+
+  addingButton.addEventListener('click', toggleProduct);
+  buyNowButton.addEventListener('click', handleOrderButton);
 
   return productInfo;
 }
