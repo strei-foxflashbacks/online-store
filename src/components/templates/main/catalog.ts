@@ -1,6 +1,6 @@
 import { productData } from "../../product-data";
 import router from "../../router/router";
-import {addProductToCart} from "../../functions/addProductToCart";
+import {toggleProduct} from "../../functions/addProductToCart";
 
 const getCatalog = (): HTMLElement => {
   const catalog = document.createElement('section');
@@ -28,7 +28,7 @@ const getCatalog = (): HTMLElement => {
       const addToCartButton = document.createElement('button');
       addToCartButton.className = 'button';
       addToCartButton.innerText = 'Add to cart';
-      addToCartButton.id = 'buttonFromCatalog';
+      addToCartButton.id = 'buttonFromCatalog' + `${element.id}`;
         catalogCard.insertAdjacentElement('beforeend', addToCartButton);
         catalogCard.insertAdjacentHTML('beforeend', '</div>');
 
@@ -36,7 +36,7 @@ const getCatalog = (): HTMLElement => {
     container.append(containerForCard);
     catalog.append(container);
 
-    addToCartButton.addEventListener('click', addProductToCart);
+    addToCartButton.addEventListener('click', toggleProduct);
     container.onclick = (): void => {
       router.navigateTo(`/catalog/${element.id}`)
     }
