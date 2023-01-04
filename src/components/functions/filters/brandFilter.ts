@@ -27,7 +27,7 @@ const brandFilter = () => {
             output.forEach(node => productCatalog.append(node))
           }
         })
-        history.pushState(null, '', `?brand=${brand.name.toLowerCase().replace(/ /g, '&')}`)
+        history.pushState(null, '', `?brand=${brand.name.toLowerCase()}`)
       }
       else if (brand.checked === false) {
         output.forEach(element => {
