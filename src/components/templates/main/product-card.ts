@@ -1,6 +1,17 @@
 import { IProductData } from "../../../types/IProductData";
+import {toggleProduct} from "../../functions/addProductToCart";
+import {handleOrderButton} from "../../functions/cart_functions/handleOrderButton";
+import getModalForPay from "./cart/modal-for-pay/modal-for-pay";
 
 const getProductCard = (product: IProductData): HTMLElement => {
+  //модалка
+  const darkBackground = document.createElement('div');
+  darkBackground.className = 'dark-background';
+  darkBackground.id = 'darkBackground';
+  document.body.prepend(darkBackground);
+  document.body.prepend(getModalForPay());
+
+
   const productInfo = document.createElement('div');
   productInfo.className = 'product-info';
 

@@ -1,7 +1,6 @@
 import clearPage from "./clearPage";
 import setDefaultPage from "./defaultPage";
 import getCart from "./templates/main/cart/cart";
-import {handleOrderButton} from "./functions/cart_functions/handleOrderButton";
 import {handlePromoInput} from "./functions/cart_functions/getPromoElement";
 import {getMainNavigate, goBack} from "./router/router";
 
