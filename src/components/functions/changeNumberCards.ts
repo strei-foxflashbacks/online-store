@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const FIVE_CARDS = document.querySelector('#five-cards');
   const CATALOG = document.querySelector('.catalog');
   const PRODUCT_CARDS = document.querySelectorAll('.catalog-card');
-  console.log(TWO_CARDS);
-  console.log(THREE_CARDS)
+
   if (THREE_CARDS !== null) {
     THREE_CARDS.addEventListener('click', changeNumberCards);
   }
