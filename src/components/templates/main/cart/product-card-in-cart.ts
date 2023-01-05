@@ -1,5 +1,23 @@
 import { IProductData } from "../../../../types/IProductData";
-import {increaseHandler} from "../../../functions/addProductToCart";
+import {increaseAndDecreaseHandler} from "../../../functions/addProductToCart";
+import {ICartProductRecord} from "../../../../types/types";
+
+
+if (!localStorage.getItem('cart')) {
+  localStorage.setItem('cart', '[]');
+}
+const cart = localStorage.getItem('cart');
+
+const objCart = JSON.parse(cart!);
+
+  function getCount(id: number, objCart: ICartProductRecord[]): number {
+    for (let i = 0; i < objCart.length; i++) {
+      if (objCart[i].id == id) {
+        return objCart[i].count;
+      }
+    }
+    return 1;
+  }
 
 const getProductCardInCart = (product: IProductData): HTMLElement => {
   const productCardInCart = document.createElement('div');
@@ -18,12 +36,10 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
     btnGroup.className = 'product-card__btn-group';
     const plusButton = document.createElement('button');
     plusButton.classList.add('plus-minus-button', 'plus');
-    plusButton.id = 'plus';
     plusButton.innerText = '+';
 
   const minusButton = document.createElement('button');
   minusButton.classList.add('plus-minus-button', 'minus');
-  minusButton.id = 'minus';
   minusButton.innerText = '-';
 
   btnGroup.append(plusButton, minusButton);
@@ -33,7 +49,7 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
   const counter = document.createElement('div');
   counter.className = 'product__counter';
   counter.classList.add('product__counter', 'counter-number');
-  counter.innerText = '1';
+  counter.innerText = `${getCount(product.id, objCart)}`;
   productCardInCart.append(counter);
 
   const stock = document.createElement('div');
@@ -43,7 +59,6 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
 
   const deleteButton = document.createElement('button');
   deleteButton.className = 'delete-button';
-  deleteButton.id = 'delete';
   const deleteImg = document.createElement('img');
   deleteImg.setAttribute('alt', 'delete icon');
   deleteImg.setAttribute('src', '../../../../assets/trash.svg');
@@ -51,8 +66,8 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
   deleteButton.append(deleteImg);
   productCardInCart.append(deleteButton);
 
-  plusButton.addEventListener('click', increaseHandler);
-  // minusButton.addEventListener('click', decreaseHandler);
+  plusButton.addEventListener('click', increaseAndDecreaseHandler);
+ minusButton.addEventListener('click', increaseAndDecreaseHandler);
   // deleteButton.addEventListener('click', removeHandler);
 
   return productCardInCart;
