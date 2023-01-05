@@ -1,16 +1,15 @@
-import {ICartElement} from "../../types/types";
+import {ICartProductRecord} from "../../types/types";
 
+//функции для работы кнопки добавить/удалить из каталога
 export function toggleProduct(event: Event) {
   event.stopPropagation();
   const button = event.target as HTMLElement;
 
-  if (button && button.parentElement && button.parentElement.parentElement) {
-    const idCard = Number(button.parentElement.parentElement.id);
-    toggleButtonText(button);
+  if (!(button && button.parentElement)) {
+    throw new Error('button and card are not found');
+  }
+    const idCard = Number(button.parentElement.id);
 
-    if (!localStorage.getItem('cart')) {
-      localStorage.setItem('cart', '[]');
-    }
 
     const cart = localStorage.getItem('cart');
     if (cart) {
@@ -26,30 +25,23 @@ export function toggleProduct(event: Event) {
 
       if (!isFoundInCart) {
         addProductToCart(objCart, idCard);
+        button.innerText = 'Delete from Cart';
       } else {
         deleteProductFromCart(objCart, idCard);
+        button.innerText = 'Add to Cart';
       }
     }
   }
-}
 
-function toggleButtonText(button: HTMLElement) {
-  if (button.innerText === 'Delete from Cart') {
-    button.innerText = 'Add to Cart';
-  } else {
-    button.innerText = 'Delete from Cart';
-  }
-}
-
-
-function addProductToCart(cart: ICartElement[], idProduct: number) {
-  const product: ICartElement = {id: idProduct, count: 1};
+function addProductToCart(cart: ICartProductRecord[], idProduct: number) {
+  const product: ICartProductRecord = {id: idProduct, count: 1};
+  console.log(product);
   console.log(JSON.stringify(cart))
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function deleteProductFromCart(cart: ICartElement[], idProduct: number) {
+function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number) {
   for (let i = 0; i < cart.length; i++) {
     const element = cart[i];
     if (element.id === idProduct) {
