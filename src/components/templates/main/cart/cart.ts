@@ -3,8 +3,19 @@ import {productData} from "../../../product-data";
 import getProductCardInCart from "./product-card-in-cart";
 import getModalForPay from "./modal-for-pay/modal-for-pay";
 
-const testArray: IProductData[] = [productData[0], productData[3], productData[8]];
 const getCart = (): HTMLElement => {
+  const productsInCartPage: IProductData[] = [];
+  if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', '[]');
+  }
+  const storageCart = localStorage.getItem('cart');
+  const objCart = JSON.parse(storageCart!);
+  for (let i = 0; i < objCart.length; i++) {
+    productsInCartPage.push(productData[objCart[i].id - 1]);
+  }
+
+
+
   const cart = document.createElement('section');
 
   //фон для модалки
@@ -42,7 +53,7 @@ const getCart = (): HTMLElement => {
 
   const products = document.createElement('div');
   products.className = 'products';
-  testArray.forEach(element => {
+  productsInCartPage.forEach(element => {
     products.append(getProductCardInCart(element))
     });
   productsAndTotal.append(products);
