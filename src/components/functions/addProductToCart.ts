@@ -35,8 +35,6 @@ export function toggleProduct(event: Event) {
 
 function addProductToCart(cart: ICartProductRecord[], idProduct: number) {
   const product: ICartProductRecord = {id: idProduct, count: 1};
-  console.log(product);
-  console.log(JSON.stringify(cart))
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -65,7 +63,6 @@ function getProductFromEvent(event: Event) {
     throw new Error('card is not found');
   }
   const product = button.parentElement.parentElement;
-  console.log(product);
   if (!product.id) {
     throw new Error('id card is not found');
   }
@@ -114,12 +111,5 @@ export function increaseHandler(event: Event) {
 }
 
 
-
-// export function decreaseHandler() {
-//
-// }
-//
-// export function removeHandler() {
-//
-// }
+}
 
