@@ -68,7 +68,7 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
 
   plusButton.addEventListener('click', increaseAndDecreaseHandler);
  minusButton.addEventListener('click', increaseAndDecreaseHandler);
-  // deleteButton.addEventListener('click', removeHandler);
+  deleteButton.addEventListener('click', increaseAndDecreaseHandler);
 
   return productCardInCart;
 }

@@ -111,8 +111,12 @@ export function increaseAndDecreaseHandler(event: Event) {
         cartProductRecord.count = cartProductRecord.count - 1;
         counter.innerText = `${cartProductRecord.count}`;
       }
-      else if (target.classList.contains('delete-button')) {
+      else if (target.parentElement && target.parentElement.classList.contains('delete-button')) {
         objCart.splice(i, 1);
+
+        if (product.parentElement) {
+          product.parentElement.removeChild(product);
+        }
       }
       localStorage.setItem('cart', JSON.stringify(objCart));
       break;
@@ -120,6 +124,4 @@ export function increaseAndDecreaseHandler(event: Event) {
   }
 }
 
-
-}
 
