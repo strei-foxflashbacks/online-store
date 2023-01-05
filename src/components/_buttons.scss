@@ -1,6 +1,6 @@
 .button {
   @include button;
-  width: 100%;
+  width: 114px;
 
   &:active {
     background: $gradient;
@@ -75,10 +75,6 @@
   width: 145px;
   background-color: white;
   cursor: pointer;
-}
-
-#addingButton {
-  max-width: 190px;
 }
 
 
