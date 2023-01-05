@@ -1,9 +1,13 @@
 import { IProductData } from "../../../../types/IProductData";
+import {increaseHandler} from "../../../functions/addProductToCart";
 
 const getProductCardInCart = (product: IProductData): HTMLElement => {
   const productCardInCart = document.createElement('div');
 
   productCardInCart.className = 'product';
+  productCardInCart.id = `${product.id}`;
+  productCardInCart.setAttribute('data-count', `${product.stock}`);
+
 
   productCardInCart.innerHTML = `
         <img src="${product.collection[0]}" alt="${product.name}" class="product__photo">
@@ -28,7 +32,7 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
 
   const counter = document.createElement('div');
   counter.className = 'product__counter';
-  counter.id = 'counterInCart';
+  counter.classList.add('product__counter', 'counter-number');
   counter.innerText = '1';
   productCardInCart.append(counter);
 
@@ -39,12 +43,17 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
 
   const deleteButton = document.createElement('button');
   deleteButton.className = 'delete-button';
+  deleteButton.id = 'delete';
   const deleteImg = document.createElement('img');
   deleteImg.setAttribute('alt', 'delete icon');
   deleteImg.setAttribute('src', '../../../../assets/trash.svg');
   deleteImg.className = 'delete-icon';
   deleteButton.append(deleteImg);
   productCardInCart.append(deleteButton);
+
+  plusButton.addEventListener('click', increaseHandler);
+  // minusButton.addEventListener('click', decreaseHandler);
+  // deleteButton.addEventListener('click', removeHandler);
 
   return productCardInCart;
 }
