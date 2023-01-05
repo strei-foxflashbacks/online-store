@@ -69,7 +69,8 @@ function getProductFromEvent(event: Event) {
   return product;
 }
 
-export function increaseHandler(event: Event) {
+
+export function increaseAndDecreaseHandler(event: Event) {
   const cart = localStorage.getItem('cart');
   if (!cart) {
     throw new Error('Cart is gone!');
@@ -94,15 +95,24 @@ export function increaseHandler(event: Event) {
     throw new Error('counter is not found!');
   }
 
-  //нажатый элемент ищется в localStorage и увеличивается его количество
+  //нажатый элемент ищется в localStorage и увеличивается/уменьшается его количество
   let cartProductRecord: ICartProductRecord;
+  const target = event.target as HTMLElement;
+
   const objCart = JSON.parse(cart);
   for (let i = 0; i < objCart.length; i++) {
     if (objCart[i].id == idCard) {
       cartProductRecord = objCart[i];
-      if (stock > cartProductRecord.count) {
+      if (target.classList.contains('plus') && stock > cartProductRecord.count) {
         cartProductRecord.count = cartProductRecord.count + 1;
         counter.innerText = `${cartProductRecord.count}`;
+      }
+      else if (target.classList.contains('minus') && cartProductRecord.count > 1) {
+        cartProductRecord.count = cartProductRecord.count - 1;
+        counter.innerText = `${cartProductRecord.count}`;
+      }
+      else if (target.classList.contains('delete-button')) {
+        objCart.splice(i, 1);
       }
       localStorage.setItem('cart', JSON.stringify(objCart));
       break;
