@@ -3,7 +3,7 @@ export interface IPromoCode {
   discountAmount: number
 }
 
-export interface ICartElement {
+export interface ICartProductRecord {
   id: number,
   count: number
 }
