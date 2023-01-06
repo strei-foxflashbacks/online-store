@@ -2,8 +2,21 @@ import { IProductData } from "../../../types/IProductData";
 import {toggleProduct} from "../../functions/addProductToCart";
 import {handleOrderButton} from "../../functions/cart_functions/handleOrderButton";
 import getModalForPay from "./cart/modal-for-pay/modal-for-pay";
+import {isProductExistsInCart} from "./catalog/updateButtonsText";
+
 
 const getProductCard = (product: IProductData): HTMLElement => {
+  if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', '[]');
+  }
+  const cart = localStorage.getItem('cart');
+  if (!cart) {
+    throw new Error('cart didn\'t created');
+  }
+  const objCart = JSON.parse(cart);
+
+
+
   //модалка
   const darkBackground = document.createElement('div');
   darkBackground.className = 'dark-background';
@@ -79,9 +92,12 @@ const getProductCard = (product: IProductData): HTMLElement => {
   buyNowButton.className = 'button_color';
   buyNowButton.id = 'buyNowButton';
 
+  const isExists = isProductExistsInCart(product.id, objCart);
+
+
   const addingButton = document.createElement('button');
   addingButton.className = 'button';
-  addingButton.innerText = 'Add to cart';
+  addingButton.innerText = isExists? 'Delete from cart' : 'Add to cart';
   addingButton.id = 'addingButton';
 
 
