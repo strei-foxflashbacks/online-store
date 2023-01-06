@@ -1,6 +1,6 @@
 import { IProductData } from "../../../../types/IProductData";
-import {plusMinusDeleteHandler} from "../../../functions/addProductToCart";
-import {ICartProductRecord} from "../../../../types/types";
+import {plusMinusDeleteHandler} from "../../../functions/cart_functions/buttonsHandlers";
+import {ICartProductRecord} from "../../../../types/ICartProductRecord";
 
 
 if (!localStorage.getItem('cart')) {

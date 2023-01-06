@@ -1,5 +1,5 @@
 import getFilters from "./filters";
-import getCatalog from "./catalog";
+import getCatalog from "./catalog/catalog";
 
 const getMainContainer = (): HTMLElement => {
   const mainContainer = document.createElement('div');
