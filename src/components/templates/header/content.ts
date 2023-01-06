@@ -1,6 +1,14 @@
 import router from "../../router/router";
 
 const getContent = (): HTMLElement => {
+  if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', '[]');
+  }
+  const storageCart = localStorage.getItem('cart');
+  const objCart = JSON.parse(storageCart!);
+  const count = objCart.length;
+
+
   const contentContainer = document.createElement('div');
 
   contentContainer.className = 'content-container';

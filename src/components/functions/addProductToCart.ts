@@ -1,4 +1,5 @@
 import {ICartProductRecord} from "../../types/types";
+import {updateCartCounter} from "../templates/header/updateCartButton";
 
 //функции для работы кнопки добавить/удалить из каталога
 export function toggleProduct(event: Event) {
@@ -37,6 +38,7 @@ function addProductToCart(cart: ICartProductRecord[], idProduct: number) {
   const product: ICartProductRecord = {id: idProduct, count: 1};
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCounter();
 }
 
 function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number) {
@@ -46,6 +48,7 @@ function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number) {
       cart.splice(i, 1);
 
       localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCounter();
       break;
     }
   }
@@ -119,6 +122,8 @@ export function increaseAndDecreaseHandler(event: Event) {
         }
       }
       localStorage.setItem('cart', JSON.stringify(objCart));
+      updateCartCounter();
+
       break;
     }
   }
