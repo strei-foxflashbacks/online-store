@@ -1,16 +1,9 @@
-import {productData} from "../../product-data";
-import router from "../../router/router";
-import {toggleProduct} from "../../functions/addProductToCart";
-import {ICartProductRecord} from "../../../types/types";
+import {productData} from "../../../product-data";
+import router from "../../../router/router";
+import {toggleProduct} from "../../../functions/addProductToCart";
+import {isProductExistsInCart} from "./updateButtonsText";
 
-function isProductExistsInCart(id: number, objCart: ICartProductRecord[]): boolean {
-  for (let i = 0; i < objCart.length; i++) {
-    if (objCart[i].id == id) {
-      return true;
-    }
-  }
-  return false;
-}
+
 
 const getCatalog = (): HTMLElement => {
   const catalog = document.createElement('section');
