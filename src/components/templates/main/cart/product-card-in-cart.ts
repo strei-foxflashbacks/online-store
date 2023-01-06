@@ -1,5 +1,5 @@
 import { IProductData } from "../../../../types/IProductData";
-import {plusMinusDeleteHandler} from "../../../functions/addProductToCart";
+import {plusMinusDeleteHandler} from "../../../functions/cart_functions/buttonsHandlers";
 import {ICartProductRecord} from "../../../../types/types";
 
 
