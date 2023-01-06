@@ -1,23 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const THREE_CARDS = document.querySelector('#three-cards');
-  const TWO_CARDS = document.querySelector('#two-cards');
-  const FIVE_CARDS = document.querySelector('#five-cards');
+export function changeGrids(event: Event) {
+  const target = event.target as HTMLElement;
+
   const CATALOG = document.querySelector('.catalog');
   const PRODUCT_CARDS = document.querySelectorAll('.catalog-card');
 
-  if (THREE_CARDS !== null) {
-    THREE_CARDS.addEventListener('click', changeNumberCards);
-  }
-  if (TWO_CARDS !== null) {
-    TWO_CARDS.addEventListener('click', changeNumberCards);
-  }
-  if (FIVE_CARDS !== null) {
-    FIVE_CARDS.addEventListener('click', changeNumberCards);
-  }
 
-
-  function changeNumberCards(event: Event) {
-    if (event.target === THREE_CARDS && CATALOG && PRODUCT_CARDS) {
+    if (target && CATALOG && PRODUCT_CARDS && target.id === 'three-cards') {
       CATALOG.classList.remove('two-cards');
       CATALOG.classList.add('three-cards');
       PRODUCT_CARDS.forEach(card => {
@@ -25,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.add('big-card');
       })
     }
-    if (event.target === TWO_CARDS && CATALOG) {
+    if (target && CATALOG && PRODUCT_CARDS && target.id === 'two-cards') {
       CATALOG.classList.remove('three-cards');
       CATALOG.classList.add('two-cards');
       PRODUCT_CARDS.forEach(card => {
@@ -33,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.add('biggest-card');
       })
     }
-    if (event.target === FIVE_CARDS && CATALOG) {
+    if (target && CATALOG && PRODUCT_CARDS && target.id === 'five-cards') {
       CATALOG.classList.remove('three-cards');
       CATALOG.classList.remove('two-cards');
       PRODUCT_CARDS.forEach(card => {
@@ -41,5 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.remove('biggest-card');
       })
     }
-  }
-})
+}
+
