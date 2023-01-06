@@ -5,5 +5,10 @@ export function updateCartCounter() {
   }
   const storageCart = localStorage.getItem('cart');
   const objCart = JSON.parse(storageCart!);
-  counter.innerText = objCart.length;
+
+  let count = 0;
+  for (let i = 0; i < objCart.length; i++) {
+    count = count + objCart[i].count;
+  }
+  counter.innerText = `${count}`;
 }

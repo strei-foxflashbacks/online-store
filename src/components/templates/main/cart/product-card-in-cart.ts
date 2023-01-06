@@ -11,12 +11,13 @@ const cart = localStorage.getItem('cart');
 const objCart = JSON.parse(cart!);
 
   function getCount(id: number, objCart: ICartProductRecord[]): number {
+    let count = 1;
     for (let i = 0; i < objCart.length; i++) {
       if (objCart[i].id == id) {
-        return objCart[i].count;
+        count = objCart[i].count;
       }
-    }
-    return 1;
+      }
+    return count;
   }
 
 const getProductCardInCart = (product: IProductData): HTMLElement => {
