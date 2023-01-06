@@ -6,7 +6,6 @@ const brandFilter = () => {
   const productCatalog = document.querySelector('.catalog') as HTMLElement;
   const fullCatalog = document.querySelectorAll('.catalog-card');
   const output: Element[] = [];
-  let capturedOutput: Element[] = [];
   let capturedLength = 0;
 
   const brands: NodeListOf<HTMLInputElement> = document.querySelectorAll('.brand-filter');
@@ -23,14 +22,21 @@ const brandFilter = () => {
       }
 
       if (brand.checked === true) {
-        catalogQueue.forEach(element => {
-          if (filteredIds.includes(element.id)) {
-            capturedOutput = catalogQueue;
-            capturedLength = catalogQueue.length
-            output.push(element)
+        if (output.length === 0) {
+          catalogQueue.forEach(element => {
+            if (filteredIds.includes(element.id)) {
+              output.push(element)
+              output.forEach(node => productCatalog.append(node))
+              capturedLength = output.length
+            }
+          })
+        } else {
+          filteredIds.forEach(id => {
+            output.push(fullCatalog[Number(id) - 1])
             output.forEach(node => productCatalog.append(node))
-          }
-        })
+            capturedLength = output.length
+          })
+        }
         history.pushState(null, '', `${window.location.search}/?brand=${brand.name.toLowerCase()}`)
       }
       else if (brand.checked === false) {
@@ -38,14 +44,15 @@ const brandFilter = () => {
           if (filteredIds.includes(element.id)) {
             output.splice(output.indexOf(element), filteredIds.length)
             output.forEach(node => productCatalog.append(node))
+            capturedLength = output.length
           }
         })
-        if (capturedLength === 30) {
+        if (capturedLength === 0) {
           fullCatalog.forEach(node => {
             productCatalog.append(node)
           })
         } else {
-          capturedOutput.forEach(node => {
+          output.forEach(node => {
             productCatalog.append(node)
           })
         }

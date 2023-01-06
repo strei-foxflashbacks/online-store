@@ -6,7 +6,6 @@ const categoryFilter = () => {
   const productCatalog = document.querySelector('.catalog') as HTMLElement;
   const fullCatalog = document.querySelectorAll('.catalog-card');
   const output: Element[] = [];
-  let capturedOutput: Element[] = []
   let capturedLength = 0;
 
   const categories: NodeListOf<HTMLInputElement> = document.querySelectorAll('.category-filter');
@@ -23,14 +22,21 @@ const categoryFilter = () => {
       }
 
       if (category.checked === true) {
-        catalogQueue.forEach(element => {
-          if (filteredIds.includes(element.id)) {
-            capturedOutput = catalogQueue;
-            capturedLength = catalogQueue.length;
-            output.push(element)
+        if (output.length === 0) {
+          catalogQueue.forEach(element => {
+            if (filteredIds.includes(element.id)) {
+              capturedLength = catalogQueue.length;
+              output.push(element)
+              output.forEach(node => productCatalog.append(node))
+            }
+          })
+        } else {
+          filteredIds.forEach(id => {
+            output.push(fullCatalog[Number(id) - 1])
             output.forEach(node => productCatalog.append(node))
-          }
-        })
+            capturedLength = output.length
+          })
+        }
         history.pushState(null, '', `${window.location.search}/?category=${category.name.toLowerCase()}`)
       }
       else if (category.checked === false) {
@@ -38,14 +44,15 @@ const categoryFilter = () => {
           if (filteredIds.includes(element.id)) {
             output.splice(output.indexOf(element), filteredIds.length)
             output.forEach(node => productCatalog.append(node))
+            capturedLength = output.length
           }
         })
-        if (capturedLength === 30) {
+        if (capturedLength === 0) {
           fullCatalog.forEach(node => {
             productCatalog.append(node)
           })
         } else {
-          capturedOutput.forEach(node => {
+          output.forEach(node => {
             productCatalog.append(node)
           })
         }
