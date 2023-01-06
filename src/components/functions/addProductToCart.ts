@@ -113,18 +113,18 @@ export function plusMinusDeleteHandler(event: Event) {
         counter.innerText = `${cartProductRecord.count}`;
       }
       //если это минус и в localStorage > 0
-      else if (target.classList.contains('minus') && cartProductRecord.count > 0) {
+      else if (target.classList.contains('minus') && cartProductRecord.count > 1) {
         //если не 0, убавить
         cartProductRecord.count = cartProductRecord.count - 1;
         counter.innerText = `${cartProductRecord.count}`;
       }
-      // else if (cartProductRecord.count === 0) {
-      //   objCart.splice(i, 1);
-      //
-      //   if (product.parentElement) {
-      //     product.parentElement.removeChild(product);
-      //   }
-      // }
+      else if (cartProductRecord.count === 1) {
+        objCart.splice(i, 1);
+
+        if (product.parentElement) {
+          product.parentElement.removeChild(product);
+        }
+      }
       //если кнопка delete, удалить из страницы и localStorage
       else if (target.parentElement && target.parentElement.classList.contains('delete-button')) {
         objCart.splice(i, 1);
