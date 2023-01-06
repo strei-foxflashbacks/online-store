@@ -1,12 +1,21 @@
 import router from "../../router/router";
 
 const getContent = (): HTMLElement => {
-  if (!localStorage.getItem('cart')) {
-    localStorage.setItem('cart', '[]');
+  function getCount(): string{
+    if (!localStorage.getItem('cart')) {
+      localStorage.setItem('cart', '[]');
+    }
+    const storageCart = localStorage.getItem('cart');
+    const objCart = JSON.parse(storageCart!);
+
+    let count = 0;
+    for (let i = 0; i < objCart.length; i++) {
+      count = count + objCart[i].count;
+    }
+    return `${count}`;
   }
-  const storageCart = localStorage.getItem('cart');
-  const objCart = JSON.parse(storageCart!);
-  const count = objCart.length;
+
+
 
 
   const contentContainer = document.createElement('div');
@@ -28,7 +37,7 @@ const getContent = (): HTMLElement => {
   const counter = document.createElement('span');
   counter.className = 'cart-counter';
   counter.id = 'cartCounter';
-  counter.innerText = `${count}`;
+  counter.innerText = getCount();
 
   headerElements.append(counter);
   contentContainer.insertAdjacentElement('beforeend', headerElements);
