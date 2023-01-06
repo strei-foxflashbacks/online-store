@@ -1,4 +1,4 @@
-import {ICartProductRecord} from "../../../../types/types";
+import {ICartProductRecord} from "../../../../types/ICartProductRecord";
 
 
 export function isProductExistsInCart(id: number, objCart: ICartProductRecord[]): boolean {

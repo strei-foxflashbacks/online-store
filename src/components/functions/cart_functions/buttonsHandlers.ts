@@ -1,5 +1,5 @@
 //функции для работы с продуктом из страницы корзины
-import {ICartProductRecord} from "../../../types/types";
+import {ICartProductRecord} from "../../../types/ICartProductRecord";
 import {updateCartCounter} from "../../templates/header/updateCartButton";
 
 function getProductFromEvent(event: Event) {

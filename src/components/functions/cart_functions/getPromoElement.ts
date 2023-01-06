@@ -1,4 +1,4 @@
-import {IPromoCode} from "../../../types/types";
+import {IPromoCode} from "../../../types/IPromoCode";
 
 
 //проверять есть ли уже такой промокод

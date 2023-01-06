@@ -1,4 +1,4 @@
-import {ICartProductRecord} from "../../types/types";
+import {ICartProductRecord} from "../../types/ICartProductRecord";
 import {updateCartCounter} from "../templates/header/updateCartButton";
 
 //функции для работы кнопки добавить/удалить из каталога и карты товара
