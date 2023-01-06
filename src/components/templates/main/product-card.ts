@@ -25,7 +25,11 @@ const getProductCard = (product: IProductData): HTMLElement => {
         <img src="${product.collection[1]}" alt="second product photo" class="product-card__photo">
         <img src="${product.collection[2]}" alt="third product photo" class="product-card__photo">
     </div>
-  </div>
+  </div>`
+
+    const description = document.createElement('div');
+  description.className = 'product-card__description';
+  description.innerHTML = `
   <div class="product-card__description">
   <div>
     <h2 class="product-card__product-name">${product.name}</h2>
@@ -51,17 +55,34 @@ const getProductCard = (product: IProductData): HTMLElement => {
                 <td>${product.stock}</td>
             </tr>
         </tbody>
-    </table>
-    <div class="product-card__cart-options">
-        <div class="product-card__price">${product.price} €</div>
-        <div class="product-card__btn-group">
-            <button class="plus-minus-button plus">+</button>
-            <button class="plus-minus-button minus">-</button>
+    </table>`
+  const options = document.createElement('div');
+  options.className = 'product-card__cart-options';
+  options.innerHTML = `<div class="product-card__price">${product.price} €</div>`;
 
-        </div>
-        <button class="button_color"><a href="#"></a>Add to cart</button>
-    </div>
-  </div>`
+  const btnGroup = document.createElement('div');
+  btnGroup.classList.add('product-card__btn-group');
+
+  const plus = document.createElement('button');
+  plus.classList.add('plus-minus-button', 'plus');
+  plus.id = 'plus';
+  plus.innerText = '+';
+
+  const minus = document.createElement('button');
+  minus.classList.add('plus-minus-button', 'minus');
+  minus.id = 'minus';
+  minus.innerText = '-';
+
+  btnGroup.append(plus, minus);
+  options.insertAdjacentElement('beforeend', btnGroup);
+
+  const addButton = document.createElement('button');
+  addButton.className = 'button_color';
+  addButton.innerText = 'Add to cart';
+  options.append(addButton);
+  description.append(options);
+  productCard.insertAdjacentElement('beforeend', description);
+
   productInfo.append(productCard);
 
   return productInfo;
