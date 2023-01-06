@@ -2,7 +2,7 @@ import {ICartProductRecord} from "../../types/types";
 import {updateCartCounter} from "../templates/header/updateCartButton";
 
 //функции для работы кнопки добавить/удалить из каталога и карты товара
-export function toggleProduct(event: Event) {
+export function toggleProduct(event: Event): void {
   event.stopPropagation();
   const button = event.target as HTMLElement;
 
@@ -25,23 +25,23 @@ export function toggleProduct(event: Event) {
       }
 
       if (!isFoundInCart) {
-        addProductToCart(objCart, idCard);
-        button.innerText = 'Delete from Cart';
+        addProductToCart(objCart, idCard, button);
       } else {
-        deleteProductFromCart(objCart, idCard);
-        button.innerText = 'Add to Cart';
+        deleteProductFromCart(objCart, idCard, button);
       }
     }
   }
 
-function addProductToCart(cart: ICartProductRecord[], idProduct: number) {
+function addProductToCart(cart: ICartProductRecord[], idProduct: number, button: HTMLElement): void {
   const product: ICartProductRecord = {id: idProduct, count: 1};
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCounter();
+  button.innerText = 'Delete from Cart';
+
 }
 
-function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number) {
+function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number,  button: HTMLElement): void {
   for (let i = 0; i < cart.length; i++) {
     const element = cart[i];
     if (element.id === idProduct) {
@@ -49,6 +49,7 @@ function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number) {
 
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCounter();
+      button.innerText = 'Add to Cart';
       break;
     }
   }
