@@ -1,4 +1,5 @@
 import {ICartProductRecord} from "../../types/types";
+import {updateCartCounter} from "../templates/header/updateCartButton";
 
 //функции для работы кнопки добавить/удалить из каталога
 export function toggleProduct(event: Event) {
@@ -35,10 +36,9 @@ export function toggleProduct(event: Event) {
 
 function addProductToCart(cart: ICartProductRecord[], idProduct: number) {
   const product: ICartProductRecord = {id: idProduct, count: 1};
-  console.log(product);
-  console.log(JSON.stringify(cart))
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCounter();
 }
 
 function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number) {
@@ -48,6 +48,7 @@ function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number) {
       cart.splice(i, 1);
 
       localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCounter();
       break;
     }
   }
@@ -65,14 +66,14 @@ function getProductFromEvent(event: Event) {
     throw new Error('card is not found');
   }
   const product = button.parentElement.parentElement;
-  console.log(product);
   if (!product.id) {
     throw new Error('id card is not found');
   }
   return product;
 }
 
-export function increaseHandler(event: Event) {
+
+export function plusMinusDeleteHandler(event: Event) {
   const cart = localStorage.getItem('cart');
   if (!cart) {
     throw new Error('Cart is gone!');
@@ -84,7 +85,7 @@ export function increaseHandler(event: Event) {
     throw new Error('stock is not found');
   }
 
-  //нахожу counter для изменения
+  //найти counter для изменения из элементов продукта
   let counter: HTMLElement | null = null;
   const productElements = product.children;
   for (const child of productElements) {
@@ -97,29 +98,46 @@ export function increaseHandler(event: Event) {
     throw new Error('counter is not found!');
   }
 
-  //нажатый элемент ищется в localStorage и увеличивается его количество
+  //нажатый элемент ищется в localStorage и увеличивается/уменьшается его количество
   let cartProductRecord: ICartProductRecord;
+  const target = event.target as HTMLElement;
+
+  //из localStorage разворачивается массив с продуктами
   const objCart = JSON.parse(cart);
   for (let i = 0; i < objCart.length; i++) {
     if (objCart[i].id == idCard) {
       cartProductRecord = objCart[i];
-      if (stock > cartProductRecord.count) {
+      //если это плюс и остаток превышает кол-во+1, прибавить количество в localStorage, сменить цифру
+      if (target.classList.contains('plus') && stock > cartProductRecord.count) {
         cartProductRecord.count = cartProductRecord.count + 1;
         counter.innerText = `${cartProductRecord.count}`;
       }
+      //если это минус и в localStorage > 0
+      else if (target.classList.contains('minus') && cartProductRecord.count > 1) {
+        //если не 0, убавить
+        cartProductRecord.count = cartProductRecord.count - 1;
+        counter.innerText = `${cartProductRecord.count}`;
+      }
+      else if (cartProductRecord.count === 1) {
+        objCart.splice(i, 1);
+
+        if (product.parentElement) {
+          product.parentElement.removeChild(product);
+        }
+      }
+      //если кнопка delete, удалить из страницы и localStorage
+      else if (target.parentElement && target.parentElement.classList.contains('delete-button')) {
+        objCart.splice(i, 1);
+
+        if (product.parentElement) {
+          product.parentElement.removeChild(product);
+        }
+      }
+      //массив с продуктами заворачивается обратно в localStorage по ключу карт
       localStorage.setItem('cart', JSON.stringify(objCart));
+      updateCartCounter();
+
       break;
     }
   }
 }
-
-
-
-// export function decreaseHandler() {
-//
-// }
-//
-// export function removeHandler() {
-//
-// }
-
