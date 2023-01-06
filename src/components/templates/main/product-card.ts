@@ -26,7 +26,11 @@ const getProductCard = (product: IProductData): HTMLElement => {
         <img src="${product.collection[1]}" alt="second product photo" class="product-card__photo">
         <img src="${product.collection[2]}" alt="third product photo" class="product-card__photo">
     </div>
-  </div>
+  </div>`
+
+    const description = document.createElement('div');
+  description.className = 'product-card__description';
+  description.innerHTML = `
   <div class="product-card__description">
   <div>
     <h2 class="product-card__product-name">${product.name}</h2>
