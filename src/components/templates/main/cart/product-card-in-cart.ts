@@ -1,5 +1,5 @@
 import { IProductData } from "../../../../types/IProductData";
-import {increaseAndDecreaseHandler} from "../../../functions/addProductToCart";
+import {plusMinusDeleteHandler} from "../../../functions/addProductToCart";
 import {ICartProductRecord} from "../../../../types/types";
 
 
@@ -66,9 +66,9 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
   deleteButton.append(deleteImg);
   productCardInCart.append(deleteButton);
 
-  plusButton.addEventListener('click', increaseAndDecreaseHandler);
- minusButton.addEventListener('click', increaseAndDecreaseHandler);
-  deleteButton.addEventListener('click', increaseAndDecreaseHandler);
+  plusButton.addEventListener('click', plusMinusDeleteHandler);
+ minusButton.addEventListener('click', plusMinusDeleteHandler);
+  deleteButton.addEventListener('click', plusMinusDeleteHandler);
 
   return productCardInCart;
 }
