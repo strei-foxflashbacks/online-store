@@ -1,6 +1,6 @@
 .button {
   @include button;
-  width: 114px;
+  width: 100%;
 
   &:active {
     background: $gradient;
