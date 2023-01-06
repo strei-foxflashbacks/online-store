@@ -1,4 +1,5 @@
 import { IProductData } from "../../../types/IProductData";
+import {toggleProduct} from "../../functions/addProductToCart";
 
 const getProductCard = (product: IProductData): HTMLElement => {
   const productInfo = document.createElement('div');
@@ -51,18 +52,30 @@ const getProductCard = (product: IProductData): HTMLElement => {
                 <td>${product.stock}</td>
             </tr>
         </tbody>
-    </table>
-    <div class="product-card__cart-options">
-        <div class="product-card__price">${product.price} €</div>
-        <div class="product-card__btn-group">
-            <button class="plus-minus-button plus">+</button>
-            <button class="plus-minus-button minus">-</button>
+    </table>`
+  const options = document.createElement('div');
+  options.className = 'product-card__cart-options';
+  options.innerHTML = `<div class="product-card__price">${product.price} €</div>`;
+  options.id = `${product.id}`;
 
-        </div>
-        <button class="button_color"><a href="#"></a>Add to cart</button>
-    </div>
-  </div>`
+  const addButton = document.createElement('button');
+  addButton.className = 'button_color';
+  addButton.innerText = 'Add to cart';
+  options.append(addButton);
+
+  const orderButton = document.createElement('button');
+  orderButton.className = 'button_color';
+  orderButton.innerText = 'Buy now';
+  options.append(orderButton);
+
+  description.append(options);
+  productCard.insertAdjacentElement('beforeend', description);
+
   productInfo.append(productCard);
+
+
+  addButton.addEventListener('click', toggleProduct);
+  // orderButton.addEventListener('click', )
 
   return productInfo;
 }
