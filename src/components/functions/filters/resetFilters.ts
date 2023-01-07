@@ -10,7 +10,7 @@ const resetFilters = () => {
     fullCatalog.forEach(node => {
       productCatalog.append(node)
     })
-    history.replaceState(null, '', `${window.location.pathname}`);
+    history.pushState(null, '', `${window.location.pathname}`);
   }
 };
 export default resetFilters;
