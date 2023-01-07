@@ -1,5 +1,6 @@
 import { IProductData } from "../../../types/IProductData";
 import { productData } from "../../product-data";
+import nothingFound from "./nothingFound";
 
 const categoryFilter = () => {
   const filterableData: IProductData[] = productData;
@@ -36,6 +37,9 @@ const categoryFilter = () => {
             output.forEach(node => productCatalog.append(node))
             capturedLength = output.length
           })
+        }
+        if (productCatalog.childNodes.length === 0) {
+          nothingFound();
         }
         history.pushState(null, '', `${window.location.search}/?category=${category.name.toLowerCase()}`)
       }
