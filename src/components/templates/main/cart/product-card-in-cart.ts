@@ -1,14 +1,10 @@
 import { IProductData } from "../../../../types/IProductData";
 import {plusMinusDeleteHandler} from "../../../functions/cart_functions/buttonsHandlers";
+import {getArrayFromLS} from "../../../functions/localStorage";
 
 
-  function getCount(id: number): number {
-    if (!localStorage.getItem('cart')) {
-      localStorage.setItem('cart', '[]');
-    }
-    const cart = localStorage.getItem('cart');
-
-    const objCart = JSON.parse(cart!);
+  function getCountOfProduct(id: number): number {
+    const objCart = getArrayFromLS('cart');
     let count = 0;
     for (let i = 0; i < objCart.length; i++) {
       if (objCart[i].id == id) {
@@ -17,6 +13,8 @@ import {plusMinusDeleteHandler} from "../../../functions/cart_functions/buttonsH
       }
     return count;
   }
+
+
 
 const getProductCardInCart = (product: IProductData): HTMLElement => {
   const productCardInCart = document.createElement('div');

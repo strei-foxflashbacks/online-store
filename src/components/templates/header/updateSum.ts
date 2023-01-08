@@ -1,17 +1,14 @@
+//import {IPromoCode} from "../../../types/IPromoCode";
+import {getArrayFromLS} from "../../functions/localStorage";
+
 export function updateSum(): void {
   const cartSum = document.querySelector('#cartButton') as HTMLElement;
   cartSum.innerText = String(getCartSum());
 }
 
 
-//не работает из карточки товара!!
-
 export function getCartSum(): number | string {
-  if (!localStorage.getItem('cart')) {
-    localStorage.setItem('cart', '[]');
-  }
-  const storageCart = localStorage.getItem('cart');
-  const objCart = JSON.parse(storageCart!);
+  const objCart = getArrayFromLS('cart');
 
   let sum = 0;
 
