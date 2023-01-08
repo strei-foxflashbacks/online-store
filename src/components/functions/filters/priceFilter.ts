@@ -1,7 +1,11 @@
+import resetSort from "./resetSort";
+
 const priceFilter = () => {
   const sortingOptions = document.querySelector('.filter-select') as HTMLSelectElement;
   const productCatalog = document.querySelector('.catalog') as HTMLElement;
   const fullCatalog = productCatalog.children;
+
+  resetSort();
 
   sortingOptions.addEventListener('change', () => {
     if (sortingOptions.value === 'min') {

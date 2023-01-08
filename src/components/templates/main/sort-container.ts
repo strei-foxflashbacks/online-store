@@ -43,6 +43,7 @@ const getSortContainer = (): HTMLElement => {
 
   const placeholder = document.createElement('option');
   placeholder.setAttribute('selected', 'selected');
+  placeholder.value = 'default'
   placeholder.textContent = 'Sort items:';
 
   const option1 = document.createElement('option');
