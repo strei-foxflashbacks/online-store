@@ -1,4 +1,5 @@
 export interface ICartProductRecord {
   id: number,
-  count: number
+  count: number,
+  price: number
 }

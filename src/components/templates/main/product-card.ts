@@ -82,6 +82,7 @@ const getProductCard = (product: IProductData): HTMLElement => {
   const options = document.createElement('div');
   options.className = 'product-card__cart-options';
   options.id = `${product.id}`;
+  options.setAttribute('data-price', `${product.price}`);
 
     const price = document.createElement('div');
     price.className = 'product-card__price';

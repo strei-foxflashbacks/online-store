@@ -33,7 +33,11 @@ export function toggleProduct(event: Event): void {
   }
 
 function addProductToCart(cart: ICartProductRecord[], idProduct: number, button: HTMLElement): void {
-  const product: ICartProductRecord = {id: idProduct, count: 1};
+  if (!button.parentElement) {
+    throw new Error('can\'t get price!');
+  }
+  const price = Number(button.parentElement.getAttribute('data-price'));
+  const product: ICartProductRecord = {id: idProduct, count: 1, price: price};
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCounter();
