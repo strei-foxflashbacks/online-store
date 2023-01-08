@@ -42,6 +42,7 @@ function addProductToCart(cart: ICartProductRecord[], idProduct: number, button:
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCounter();
+  updateSum();
   button.innerText = 'Delete from Cart';
 
 }
@@ -54,6 +55,7 @@ function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number,  b
 
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCounter();
+      updateSum();
       button.innerText = 'Add to Cart';
       break;
     }

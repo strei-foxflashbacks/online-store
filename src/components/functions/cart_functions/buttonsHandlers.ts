@@ -1,6 +1,6 @@
 //функции для работы с продуктом из страницы корзины
 import {ICartProductRecord} from "../../../types/ICartProductRecord";
-import {getCount, updateCartCounter} from "../../templates/header/updateCount";
+import {updateCartCounter} from "../../templates/header/updateCount";
 import {updateSum} from "../../templates/header/updateSum";
 
 function getProductFromEvent(event: Event): HTMLElement {
@@ -83,6 +83,7 @@ export function plusMinusDeleteHandler(event: Event) {
       //массив с продуктами заворачивается обратно в localStorage по ключу карт
       localStorage.setItem('cart', JSON.stringify(objCart));
       updateCartCounter();
+      updateSum();
 
       break;
     }

@@ -16,7 +16,7 @@ const getContent = (): HTMLElement => {
   const button = document.createElement('button');
   button.setAttribute('type', 'button');
   button.setAttribute('id', 'cartButton');
-  button.innerText = 'Cart';
+  button.innerText = getCartSum() > 0 ? `${getCartSum()}` : 'Cart';
   button.classList.add('button', 'cart-button');
   headerElements.append(button);
 
