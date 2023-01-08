@@ -1,5 +1,10 @@
 export function updateCartCounter() {
   const counter = document.querySelector('#cartCounter') as HTMLElement;
+  counter.innerText = `${getCount()}`;
+}
+
+
+export function getCount(): number{
   if (!localStorage.getItem('cart')) {
     localStorage.setItem('cart', '[]');
   }
@@ -10,5 +15,5 @@ export function updateCartCounter() {
   for (let i = 0; i < objCart.length; i++) {
     count = count + objCart[i].count;
   }
-  counter.innerText = `${count}`;
+  return count;
 }

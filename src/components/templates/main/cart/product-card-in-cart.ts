@@ -1,17 +1,15 @@
 import { IProductData } from "../../../../types/IProductData";
 import {plusMinusDeleteHandler} from "../../../functions/cart_functions/buttonsHandlers";
-import {ICartProductRecord} from "../../../../types/ICartProductRecord";
 
 
-if (!localStorage.getItem('cart')) {
-  localStorage.setItem('cart', '[]');
-}
-const cart = localStorage.getItem('cart');
+  function getCount(id: number): number {
+    if (!localStorage.getItem('cart')) {
+      localStorage.setItem('cart', '[]');
+    }
+    const cart = localStorage.getItem('cart');
 
-const objCart = JSON.parse(cart!);
-
-  function getCount(id: number, objCart: ICartProductRecord[]): number {
-    let count = 1;
+    const objCart = JSON.parse(cart!);
+    let count = 0;
     for (let i = 0; i < objCart.length; i++) {
       if (objCart[i].id == id) {
         count = objCart[i].count;
@@ -26,6 +24,8 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
   productCardInCart.className = 'product';
   productCardInCart.id = `${product.id}`;
   productCardInCart.setAttribute('data-count', `${product.stock}`);
+  productCardInCart.setAttribute('data-price', `${product.price}`);
+
 
 
   productCardInCart.innerHTML = `
@@ -50,7 +50,7 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
   const counter = document.createElement('div');
   counter.className = 'product__counter';
   counter.classList.add('product__counter', 'counter-number');
-  counter.innerText = `${getCount(product.id, objCart)}`;
+  counter.innerText = `${getCount(product.id)}`;
   productCardInCart.append(counter);
 
   const stock = document.createElement('div');

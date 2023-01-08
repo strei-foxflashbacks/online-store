@@ -1,5 +1,6 @@
 import {ICartProductRecord} from "../../types/ICartProductRecord";
-import {updateCartCounter} from "../templates/header/updateCartButton";
+import {updateCartCounter} from "../templates/header/updateCount";
+import {updateSum} from "../templates/header/updateSum";
 
 //функции для работы кнопки добавить/удалить из каталога и карты товара
 export function toggleProduct(event: Event): void {

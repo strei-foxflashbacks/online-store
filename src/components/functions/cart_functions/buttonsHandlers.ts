@@ -1,8 +1,9 @@
 //функции для работы с продуктом из страницы корзины
 import {ICartProductRecord} from "../../../types/ICartProductRecord";
-import {updateCartCounter} from "../../templates/header/updateCartButton";
+import {getCount, updateCartCounter} from "../../templates/header/updateCount";
+import {updateSum} from "../../templates/header/updateSum";
 
-function getProductFromEvent(event: Event) {
+function getProductFromEvent(event: Event): HTMLElement {
   //нахожу айди продукта
   const button = event.target as HTMLElement;
   if (!button) {
