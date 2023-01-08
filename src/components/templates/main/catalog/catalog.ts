@@ -25,8 +25,7 @@ const getCatalog = (): HTMLElement => {
   productData.forEach(element => {
     const container = document.createElement('div');
     container.id = `${element.id}`;
-    container.className = 'container';
-    container.classList.add('catalog-card');
+    container.classList.add('container', 'catalog-card');
     container.setAttribute('data-price', `${element.price}`)
     container.setAttribute('data-stock', `${element.stock}`)
     container.innerHTML = `
