@@ -27,6 +27,7 @@ const getCatalog = (): HTMLElement => {
     container.id = `${element.id}`;
     container.className = 'container';
     container.classList.add('catalog-card');
+    container.setAttribute('data-price', `${element.price}`)
     container.innerHTML = `
         <img src="${element.photo}" alt="${element.name}" class="catalog-card__photo">
         <div class="catalog-card__name">${element.name}</div>
