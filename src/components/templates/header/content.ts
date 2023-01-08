@@ -1,6 +1,6 @@
 import router from "../../router/router";
 import {getCartSum} from "./updateSum";
-import {getCount} from "./updateCount";
+import {getTotalCount} from "./updateCount";
 
 const getContent = (): HTMLElement => {
 
@@ -23,7 +23,7 @@ const getContent = (): HTMLElement => {
   const counter = document.createElement('span');
   counter.className = 'cart-counter';
   counter.id = 'cartCounter';
-  counter.innerText = `${getCount()}`;
+  counter.innerText = `${getTotalCount()}`;
 
   headerElements.append(counter);
   contentContainer.insertAdjacentElement('beforeend', headerElements);

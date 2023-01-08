@@ -48,7 +48,7 @@ const getProductCardInCart = (product: IProductData): HTMLElement => {
   const counter = document.createElement('div');
   counter.className = 'product__counter';
   counter.classList.add('product__counter', 'counter-number');
-  counter.innerText = `${getCount(product.id)}`;
+  counter.innerText = `${getCountOfProduct(product.id)}`;
   productCardInCart.append(counter);
 
   const stock = document.createElement('div');
