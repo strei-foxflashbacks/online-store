@@ -41,6 +41,11 @@ const getSortContainer = (): HTMLElement => {
   select.className = 'filter-select';
   select.name = 'sort-by';
 
+  const placeholder = document.createElement('option');
+  placeholder.setAttribute('selected', 'selected');
+  placeholder.value = 'default'
+  placeholder.textContent = 'Sort items:';
+
   const option1 = document.createElement('option');
   option1.value = 'min';
   option1.innerText = 'Low to High';
@@ -57,7 +62,7 @@ const getSortContainer = (): HTMLElement => {
   option4.value = 'stock-max';
   option4.innerText = 'Quantity in stock max';
 
-  select.append(option1, option2, option3, option4);
+  select.append(placeholder, option1, option2, option3, option4);
 
   buttonsContainer.append(buttonView1, buttonView2, buttonView3);
   countAndSort.append(buttonsContainer, select);
