@@ -19,7 +19,7 @@ function getProductFromEvent(event: Event): HTMLElement {
   return product;
 }
 
-
+//разделить на колбэки и вызывающую функцию
 export function plusMinusDeleteHandler(event: Event) {
   const product = getProductFromEvent(event);
   const idCard = product.id;

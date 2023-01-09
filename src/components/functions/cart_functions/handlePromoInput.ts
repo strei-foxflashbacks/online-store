@@ -57,6 +57,23 @@ export function setPromoElement(promoname: string): HTMLElement {
   const word = document.createElement('span');
   word.innerHTML = promoname;
 
+  promo.setAttribute('data-promoname', `${word.textContent}`);
+
   promo.append(word, crossButtonInput);
+  crossButtonInput.addEventListener('click', deletePromo);
+
   return promo;
+}
+
+function deletePromo(event: Event) {
+  const target = event.target as HTMLElement;
+  const promocodes: IPromoCode[] = getArrayFromLS('promocodes');
+  for (let i = 0; i < promocodes.length; i++) {
+    if (target.parentElement && promocodes[i].promoword === target.parentElement.getAttribute('data-promoname')) {
+      promocodes.splice(i,1);
+      localStorage.setItem('promocodes', JSON.stringify(promocodes));
+      target.parentElement.remove();
+      updateSumWithPromo();
+    }
+  }
 }
