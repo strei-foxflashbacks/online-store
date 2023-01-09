@@ -15,10 +15,23 @@ const getCart = (): HTMLElement => {
   }
   const storageCart = localStorage.getItem('cart');
   const objCart = JSON.parse(storageCart!);
+
+  // if (objCart.length === 0) {
+  //   const main = document.querySelector('main');
+  //   if (main) {
+  //     main.classList.add('empty-cart');
+  //     const empty = document.createElement('div');
+  //     empty.innerText = 'The Cart is empty! :(';
+  //     main.append(empty);
+  //     return main;
+  //   }
+  // }
+
   for (let i = 0; i < objCart.length; i++) {
     productsInCartPage.push(productData[objCart[i].id - 1]);
   }
 
+  const promocodes = getArrayFromLS('promocodes');
 
 
   const cart = document.createElement('section');

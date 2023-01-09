@@ -1,7 +1,14 @@
 import {getArrayFromLS} from "../../functions/localStorage";
+
+//написать общую функцию обновления, передавать элемент
 export function updateCartCounter() {
   const counter = document.querySelector('#cartCounter') as HTMLElement;
-  counter.innerText = `${getTotalCount()}`;
+  counter.innerText = `${getTotalCount()} pcs, `;
+}
+
+export function updateCounterInTotal() {
+  const pcs = document.querySelector('#pcs') as HTMLElement;
+  pcs.innerText = `${getTotalCount()} pcs, `;
 }
 
 
