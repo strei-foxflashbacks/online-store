@@ -1,18 +1,11 @@
 import {IPromoCode} from "../../../types/IPromoCode";
 import {getArrayFromLS} from "../localStorage";
 import {promocodeData} from "../../promocode-data";
-import {updateSumWithPromo} from "../../templates/header/updateSum";
-import {getTotalCount} from "../../templates/header/updateCount";
+import {updatePrevSum, updateSumWithPromo} from "../../templates/header/updateSum";
+import {updateCounterInTotal} from "../../templates/header/updateCount";
 
 export function handlePromoInput(event: Event) {
   const promoInput = event.target as HTMLInputElement;
-  if (getTotalCount() === 0) {
-    promoInput.style.borderColor = 'red';
-    promoInput.value = '';
-    return;
-  } else {
-    promoInput.style.borderColor = 'gray';
-  }
 
   const containerPromo = document.querySelector('.total__promo-container');
   const promoData: IPromoCode[] = promocodeData;
@@ -29,6 +22,8 @@ export function handlePromoInput(event: Event) {
       localStorage.setItem('promocodes', JSON.stringify(promoArr));
       promoInput.value = "";
       updateSumWithPromo();
+      updatePrevSum();
+      updateCounterInTotal();
   }
 }
 
@@ -74,6 +69,8 @@ function deletePromo(event: Event) {
       localStorage.setItem('promocodes', JSON.stringify(promocodes));
       target.parentElement.remove();
       updateSumWithPromo();
+      updateCounterInTotal();
+      updatePrevSum();
     }
   }
 }
