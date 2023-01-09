@@ -1,8 +1,10 @@
 //функции для работы с продуктом из страницы корзины
 import {ICartProductRecord} from "../../../types/ICartProductRecord";
-import {updateCartCounter} from "../../templates/header/updateCount";
-import {updateSum, updateSumWithPromo} from "../../templates/header/updateSum";
+import {updateCartCounter, updateCounterInTotal} from "../../templates/header/updateCount";
+import {updatePrevSum, updateSum, updateSumWithPromo} from "../../templates/header/updateSum";
 import {getArrayFromLS} from "../localStorage";
+import clearPage from "../../clearPage";
+import setDefaultPage from "../../defaultPage";
 
 function getProductFromEvent(event: Event): HTMLElement {
   const button = event.target as HTMLElement;
@@ -73,8 +75,27 @@ export function plusMinusDeleteHandler(event: Event) {
       updateCartCounter();
       updateSum();
       updateSumWithPromo();
+      updatePrevSum();
+      updateCounterInTotal();
+      updateCartPage();
 
       break;
+    }
+  }
+}
+
+export function updateCartPage() {
+  const cart = getArrayFromLS('cart');
+  if (cart.length === 0) {
+    clearPage();
+    setDefaultPage();
+
+    const main = document.querySelector('main');
+    if (main) {
+      main.classList.add('empty-cart');
+      const empty = document.createElement('div');
+      empty.innerText = 'The Cart is empty! :(';
+      main.append(empty);
     }
   }
 }
