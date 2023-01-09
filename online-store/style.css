@@ -1,0 +1,351 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+.catalog{display:flex;flex-wrap:wrap;justify-content:start;max-width:1337px;gap:28px;width:100%}.three-cards{display:grid;grid-template-columns:repeat(3, 1fr)}.two-cards{display:grid;grid-template-columns:repeat(2, 1fr)}.catalog-card{width:245px;height:422px;border-radius:20px;background-color:#fff;display:flex;align-items:center;flex-direction:column;justify-content:space-between;padding:30px;box-sizing:border-box}.catalog-card__photo{max-width:200px}.catalog-card__name{font:400 16px "Montserrat",sans-serif;align-self:flex-start}.catalog-card__price{font:600 16px "Montserrat",sans-serif;align-self:flex-start}.big-card{width:100%}.big-card>img{max-width:260px}.biggest-card{width:100%;height:480px}.biggest-card>img{max-width:300px}.catalog{margin:0 0 0 56px}.buttons-container{display:flex;gap:7px}.hidden{display:none}.contacts{display:flex;justify-content:space-between;padding:0;width:100%;max-width:1620px;margin:auto;padding:0 15px}.contacts__item{list-style-type:none;color:#fff;font:400 16px "Montserrat",sans-serif;display:flex;flex-direction:row;align-items:center;gap:8px}.container-contacts{height:45px;background:linear-gradient(90deg, rgb(151, 100, 100) 0%, rgb(207, 165, 165) 100%);display:flex;align-items:center}.logo{margin:45px auto 80px;width:171.25px;height:61.5px;font:400 16px "Spectral SC",serif;font-size:50px;color:#8a8888;hyphens:auto;line-height:.75;letter-spacing:-1px;text-align:center}.header-elements{right:0;display:flex;align-items:center;gap:20px;padding-right:15px;position:fixed;z-index:1;bottom:20px}.cart-container{position:relative}.button{border:2px solid #8a8888;border-radius:30px;color:#8a8888;height:38px;background-color:rgba(255,255,255,0);cursor:pointer;width:100%}.button:hover{border:2px solid #976464;color:#976464}.button:active{background:linear-gradient(90deg, rgb(151, 100, 100) 0%, rgb(207, 165, 165) 100%);border:none;color:#fff}.button_color{background:linear-gradient(90deg, rgb(151, 100, 100) 0%, rgb(207, 165, 165) 100%);border:none;color:#fff;font-family:"Spectral SC",serif;font-size:16px;width:185px;text-transform:uppercase;cursor:pointer;height:38px;border-radius:30px}.button_color:hover{color:#424242}.button_color:active{background:none;border:2px solid #976464;color:#976464}.cart-counter{width:25px;height:25px;border-radius:17px;background-color:#dedebe;display:block;position:absolute;font-size:11px;color:#000;top:-8px;right:27px;text-align:center;padding-top:4px;box-sizing:border-box}.form{position:relative}.form__input{border:2px solid #8a8888;border-radius:30px;color:#8a8888;height:38px;background-color:rgba(255,255,255,0);cursor:pointer;padding-left:10px;resize:vertical;width:184px}.form__input:hover{border:2px solid #976464;color:#976464}.form__search-button{border:none;position:absolute;background-color:rgba(255,255,255,0);top:10px;right:10px}.form:active{background-color:rgba(255,255,255,0)}.cart-button{height:70px;border-radius:70px;font-size:23px;width:145px;background-color:#fff;cursor:pointer}#addingButton{max-width:170px}.main-banner{height:462px;background:linear-gradient(90deg, rgb(194, 194, 160) 0%, rgb(223, 222, 202) 52%);border-radius:20px;display:flex;justify-content:start;align-items:start;gap:50px;position:relative;max-width:1620px;margin:auto;padding:0 15px}.main-banner__product-name{font-family:"Spectral SC",serif;font-size:28px}.main-banner__pic{display:block;margin-left:170px}.main-banner__text{max-width:480px;margin-bottom:35px}.main-banner__description{margin-top:35px}.main-banner__decor1{position:absolute;right:655px}.main-banner__decor2{position:absolute;right:0;bottom:0}.main-banner__decor3{position:absolute;top:-77px;right:94px}.sort-button-container{max-width:1620px;margin:auto;padding:0 15px;margin-top:60px;margin-bottom:60px;display:flex;justify-content:space-between}.filter-select{border:2px solid #8a8888;border-radius:30px;color:#8a8888;height:38px;background-color:rgba(255,255,255,0);cursor:pointer;padding:5px}.count-products-container{display:flex;align-items:center;gap:10px;justify-content:space-between;width:100%}.icon-grid{width:38px;padding:5px;cursor:pointer}.path-to-section{margin-bottom:20px}.path-to-section__item{text-decoration:none}.filter-container{max-width:227px}.filter-container__title{font:600 16px "Montserrat",sans-serif;margin-bottom:10px}.filter-container__item{border-bottom:1px solid #8a8888;margin-bottom:20px}.filter-container__section{margin:10px 0}.main-container{display:flex;max-width:1620px;margin:auto;padding:0 15px}.container-for-buttons{display:flex;flex-direction:column;gap:16px}.filters button{width:100%}.count-and-sort{display:flex;gap:40px}.footer{background:linear-gradient(90deg, rgb(194, 194, 160) 0%, rgb(223, 222, 202) 52%);height:380px;margin-top:50px;display:flex;align-items:center;justify-content:space-around}.footer>.logo{margin:0}.footer a{font-size:19px;font-weight:600}.rs-logo{width:150px;display:block}.autors-links{display:flex;gap:20px;font-size:19px;font-weight:600}.product-info{max-width:1620px;margin:auto;padding:0 15px}.product-card{margin-top:20px;max-width:1620px;margin:auto;padding:0 15px;display:grid;grid-template-columns:.5fr 1.2fr;gap:20px;max-width:1000px}.product-card__photos{display:flex;flex-direction:column;position:relative}.product-card__price{font:600 16px "Montserrat",sans-serif;font-size:40px}.product-card__photo{max-height:500px;width:100%;transition:transform .5s ease-out}.product-card__photo:hover{transform:scale(2)}.product-card__product-name{margin-top:0;margin-bottom:36px;font-size:30px;width:576px}.product-card__cart-options{display:flex;align-items:center;gap:40px;justify-content:space-between}.product-card__description{color:#424242;display:flex;flex-direction:column;justify-content:space-between}.product-card__table caption,.product-card th{text-align:start}.product-card__table>caption{font:600 16px "Montserrat",sans-serif;font-size:24px;margin-bottom:10px}.product-card__btn-group{border:1px solid #8a8888;border-radius:20px;height:35px;width:100px;font-size:0;display:flex;justify-content:space-around}.product-card__table th,td{border-bottom:2px dotted gray}.product-card__table tr{border:1px solid #ccc;height:100px}.photo-set{display:flex;flex-direction:column;align-items:start}.photo-set__button{width:20px;height:20px;border-radius:20px;border:solid 2px #8a8888}.photo-set__buttons{display:flex;gap:5px;align-self:center;margin-top:25px}.plus-minus-button{cursor:pointer;font-size:24px;color:#8a8888;text-align:center;border:none;background-color:rgba(255,255,255,0)}.plus-minus-button:active{color:#000}.photo-and-buttons{display:flex;flex-direction:column;justify-content:center}.cart-container{max-width:1620px;margin:auto;padding:0 15px;display:flex;flex-direction:column}.product{display:flex;justify-content:space-between;gap:25px;align-items:center}.product__photo{width:170px;height:170px;border-radius:20px}.product__name{font-size:18px;font-weight:600;width:500px}.product__price{font-weight:600;font-size:24px}.total{padding:40px;box-sizing:border-box;max-width:527px;background-color:#d7d5d5;border-radius:15px;height:100%}.total tr{margin:10px 0}.total__counting{vertical-align:bottom;min-height:170px;border-spacing:15px}.total__counting td{text-align:end;border:none}.total__counting th{text-align:start}.total__sum th{font-weight:400;font-size:14px}.total__sum td{font-size:52px}.total .button_color{width:100%;margin-top:20px}.total__promo-container{display:flex;flex-direction:column;gap:10px}.total__promo-word{background-color:#fff;display:flex;justify-content:space-between;align-items:center;height:25px;border-radius:33px;padding:9px 9px 9px 20px}.total__sum-without-discount{font-size:24px}.promocode{border:2px solid #8a8888;border-radius:33px;height:33px;padding-left:20px;background-color:rgba(255,255,255,0)}.title{margin:0 0 20px}.products{width:100%;display:flex;flex-direction:column;gap:10px}.products-total-container{display:flex;gap:20px}.delete-button{border:none;background-color:rgba(255,255,255,0)}.delete-icon{display:block;margin:auto;transition:scale .1s ease}.delete-icon:hover{scale:1.2}.delete-icon:active{scale:1.5}.promo-error{visibility:hidden}.old-sum{text-decoration:line-through red;font-size:18px}.empty-cart{height:300px}.dark-background{background-color:rgba(0,0,0,.26);position:absolute;top:0;width:100%;height:100%;z-index:100;visibility:hidden}.modal-pay{visibility:hidden;width:550px;background-color:#fff;border-radius:20px;z-index:101;position:fixed;right:0;top:30px;left:0;margin:auto;padding:40px;color:#976464}.modal-pay .button_color{height:62px;width:100%;margin:auto}.modal-pay input,.modal-pay label{margin:0}.modal-pay form{display:flex;flex-direction:column;gap:30px}.user-data,.payment-card{display:flex;flex-direction:column;padding:0;gap:11px}.user-data__label-item,.payment-card__label-item{margin-bottom:5px;font-weight:600;font-size:20px}.user-data__input-item,.payment-card__input-item{margin-bottom:15px;height:35px;border-radius:25px;border:1px solid #8a8888;padding-left:18px}.user-data__input-item:invalid,.payment-card__input-item:invalid{border:2px solid red}.user-data__input-item:valid,.payment-card__input-item:valid{border:1.5px solid #9dd375}.payment-card__input{width:70px}.payment-card__groups{display:flex;flex-direction:row;gap:15px}.payment-card__group{display:flex;flex-direction:column;gap:10px}body{background-color:#e8e8e8;color:#424242;font:400 16px "Montserrat",sans-serif;position:relative}fieldset{border:none}.content-container{max-width:1620px;margin:auto;padding:0 15px;position:relative}a{text-decoration:none}
