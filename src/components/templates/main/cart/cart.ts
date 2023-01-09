@@ -2,6 +2,9 @@ import { IProductData } from "../../../../types/IProductData";
 import {productData} from "../../../product-data";
 import getProductCardInCart from "./product-card-in-cart";
 import getModalForPay from "./modal-for-pay/modal-for-pay";
+import {getArrayFromLS} from "../../../functions/localStorage";
+import {IPromoCode} from "../../../../types/IPromoCode";
+import {setPromoElement} from "../../../functions/cart_functions/handlePromoInput";
 
 const getCart = (): HTMLElement => {
   const productsInCartPage: IProductData[] = [];
@@ -100,7 +103,7 @@ const getCart = (): HTMLElement => {
 
   const promosInLocalStorage: IPromoCode[] = getArrayFromLS('promocodes');
     promosInLocalStorage.forEach(elem => {
-    totalPromoContainer.append(getPromoElement(elem.promoword));
+    totalPromoContainer.append(setPromoElement(elem.promoword));
       });
 
   tbody.append(rowProduct, rowPromo, rowApplied);

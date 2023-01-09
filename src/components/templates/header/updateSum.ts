@@ -1,4 +1,3 @@
-//import {IPromoCode} from "../../../types/IPromoCode";
 import {getArrayFromLS} from "../../functions/localStorage";
 
 export function updateSum(): void {
