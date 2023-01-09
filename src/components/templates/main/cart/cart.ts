@@ -78,7 +78,15 @@ const getCart = (): HTMLElement => {
 
   const rowProductData = document.createElement('td');
   rowProductData.classList.add('total__sum-without-discount');
-  rowProductData.innerText = `${getTotalCount()} pc(s), ${getCartSum()}€`;
+
+  const pcs = document.createElement('span');
+  const sum = document.createElement('span');
+  pcs.innerText = `${getTotalCount()} pc(s),`;
+  pcs.id = 'pcs';
+  sum.innerText = `${getCartSum()}€`;
+  sum.id = 'prevSum';
+  rowProductData.append(pcs, sum);
+
   rowProduct.append(rowProductHead, rowProductData);
 
   const rowPromo = document.createElement('tr');
@@ -123,7 +131,19 @@ const getCart = (): HTMLElement => {
 
     const rowTotalData = document.createElement('td');
     rowTotalData.id = 'totalToPay';
-    rowTotalData.innerText = `${applyPromoToSum(getCartSum())}€`;
+
+    const oldSum = document.createElement('div');
+    oldSum.innerText = `${getCartSum()}€`;
+
+  if (promocodes.length > 0) {
+    oldSum.classList.add('old-sum');
+    rowTotalData.append(oldSum);
+    rowTotalData.insertAdjacentHTML('beforeend', `<div>${applyPromoToSum(getCartSum())}€</div>`);
+  } else {
+    oldSum.classList.remove('old-sum');
+  }
+  rowTotalData.append(oldSum);
+
 
     rowTotal.append(rowTotalHead, rowTotalData);
 
