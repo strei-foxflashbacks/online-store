@@ -3,12 +3,32 @@ import {IPromoCode} from "../../../types/IPromoCode";
 
 export function updateSum(): void {
   const cartSum = document.querySelector('#cartButton') as HTMLElement;
-  cartSum.innerText = String(getCartSum());
+  cartSum.innerText = `${getCartSum()}€`;
+}
+
+export function updatePrevSum() {
+  const cartSum = document.querySelector('#prevSum') as HTMLElement;
+  if (cartSum) {
+    cartSum.innerText = `${getCartSum()}€`;
+  }
 }
 
 export function updateSumWithPromo(): void {
+  const promocodes = getArrayFromLS('promocodes');
+
   const finalSum = document.querySelector('#totalToPay') as HTMLElement;
-  finalSum.innerText = `${applyPromoToSum(getCartSum())}€`
+  finalSum.classList.add('sum-container');
+
+  while (finalSum.firstChild) {
+    finalSum.removeChild(finalSum.firstChild);
+  }
+
+  if (promocodes.length > 0) {
+    finalSum.insertAdjacentHTML('afterbegin',`<div class="old-sum">${getCartSum()}€</div>`);
+    finalSum.insertAdjacentHTML('beforeend',`<div>${applyPromoToSum(getCartSum())}€</div>`);
+  } else {
+    finalSum.insertAdjacentHTML('afterbegin',`<div>${getCartSum()}€</div>`);
+  }
 }
 
 
