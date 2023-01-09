@@ -1,5 +1,6 @@
 import { IProductData } from "../../../types/IProductData";
 import { productData } from "../../product-data";
+import convertNameToPath from "./convertNameToPath";
 import nothingFound from "./nothingFound";
 
 const categoryFilter = () => {
@@ -60,7 +61,11 @@ const categoryFilter = () => {
             productCatalog.append(node)
           })
         }
+        const categoryUnselected = convertNameToPath(`/?category=${category.name.toLowerCase()}`);
+        const re = new RegExp(categoryUnselected, 'g');
+        const replaceable = `${window.location.search}`.replace(re, '').slice(0, -2);
         history.replaceState(null, '', `${window.location.pathname}`);
+        history.pushState(null, '', replaceable);
       }
     })
   })

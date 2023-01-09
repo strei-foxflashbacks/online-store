@@ -9,7 +9,7 @@ const getSortContainer = (): HTMLElement => {
   <div class="count-products-container">
   <form action="" method="get" class="form">
       <input name="s" placeholder="Enter..." type="search" class="form__input">
-      <button type="submit" class="form__search-button"><img src="./assets/search.svg" alt=""></button>
+      <button type="submit" class="form__search-button" disabled><img src="./assets/search.svg" alt=""></button>
     </form>`
 
   const countAndSort = document.createElement('div');

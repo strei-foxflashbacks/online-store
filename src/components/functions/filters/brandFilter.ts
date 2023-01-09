@@ -1,5 +1,6 @@
 import { IProductData } from "../../../types/IProductData";
 import { productData } from "../../product-data";
+import convertNameToPath from "./convertNameToPath";
 import nothingFound from "./nothingFound";
 
 const brandFilter = () => {
@@ -60,7 +61,11 @@ const brandFilter = () => {
             productCatalog.append(node)
           })
         }
+        const brandUnselected = convertNameToPath(`/?brand=${brand.name.toLowerCase()}`)
+        const re = new RegExp(brandUnselected, 'g')
+        const replaceable = `${window.location.search}`.replace(re, '').slice(0, -2)
         history.replaceState(null, '', `${window.location.pathname}`);
+        history.pushState(null, '', replaceable);
       }
     })
   })
