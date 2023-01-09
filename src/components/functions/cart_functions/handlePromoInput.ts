@@ -6,6 +6,13 @@ import {getTotalCount} from "../../templates/header/updateCount";
 
 export function handlePromoInput(event: Event) {
   const promoInput = event.target as HTMLInputElement;
+  if (getTotalCount() === 0) {
+    promoInput.style.borderColor = 'red';
+    promoInput.value = '';
+    return;
+  } else {
+    promoInput.style.borderColor = 'gray';
+  }
 
   const containerPromo = document.querySelector('.total__promo-container');
   const promoData: IPromoCode[] = promocodeData;
