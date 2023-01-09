@@ -33,5 +33,15 @@ const searchItem = () => {
         nothingFound()
     }
   }
+
+  searchBar.onblur = () => {
+    const typedText = searchBar.value.trim();
+    let searchCashe = ''
+
+    if (typedText.length > 0) {
+      searchCashe = `${window.location.search}/?search=${typedText}`
+      history.pushState(null, '', searchCashe)
+    }
+  }
 };
 export default searchItem;
