@@ -62,42 +62,65 @@ const getCart = (): HTMLElement => {
   //сумма заказа, скидки, промокоды
   const total = document.createElement('div');
   total.className = 'total';
-  total.innerHTML =
-  `<table class="total__counting">
-    <tbody>
-        <tr>
-        <!--    Product(s), $ { totalWithoutDiscount}item(s)-->
-            <th>Product(s), item(s)</th>
-            <td class="total__sum-without-discount">20€</td>
-        </tr>
-        <tr>
-            <th>Promo code</th>
-            <td>
-                <input type="text" name="promo-code" class="promocode"/>
-            </td>
-        </tr>
-        <tr>
-            <th>Applied:</th>
-            <td>
-                <div class="total__promo-container"></div>
-            </td>
-        </tr>
-    </tbody>
+
+  const table = document.createElement('table');
+  table.classList.add('total__counting');
+  const tbody = document.createElement('tbody');
+
+  const rowProduct = document.createElement('tr');
+  const rowProductHead = document.createElement('th');
+  rowProductHead.innerText = 'Product(s), item(s)';
+
+  const rowProductData = document.createElement('td');
+  rowProductData.classList.add('total__sum-without-discount');
+  rowProductData.innerText = '20€'
+  rowProduct.append(rowProductHead, rowProductData);
+
+  const rowPromo = document.createElement('tr');
+
+  const rowPromoHead = document.createElement('th');
+  rowPromoHead.innerText = 'Promo code';
+
+  const rowPromoData = document.createElement('td');
+  rowPromoData.insertAdjacentHTML('beforeend', `<input type="text" name="promo-code" class="promocode"/>`);
+  rowPromo.append(rowPromoHead, rowPromoData);
+
+  const rowApplied = document.createElement('tr');
+  rowApplied.insertAdjacentHTML('afterbegin', '<th>Applied:</th>');
+
+
+  const totalPromoContainer = document.createElement('div');
+  totalPromoContainer.classList.add('total__promo-container');
+  totalPromoContainer.innerHTML = `<span class="promo-error">already applied</span>`;
+
+  const tdForTotal = document.createElement('td');
+  tdForTotal.insertAdjacentElement("beforeend", totalPromoContainer);
+  rowApplied.append(tdForTotal);
+
+
+  const promosInLocalStorage: IPromoCode[] = getArrayFromLS('promocodes');
+    promosInLocalStorage.forEach(elem => {
+    totalPromoContainer.append(getPromoElement(elem.promoword));
+      });
+
+  tbody.append(rowProduct, rowPromo, rowApplied);
+  table.append(tbody);
+    table.insertAdjacentHTML('beforeend', `
     <tfoot class="total__sum">
         <tr>
             <th>Total to pay</th>
-            <td>30€</td>
+            <td id="totalToPay">30€</td>
         </tr>
     </tfoot>
-  </table>
-`
+`);
+
 
   //кнопка заказа
   const orderButton = document.createElement('button');
   orderButton.id = 'order';
   orderButton.className = 'button_color';
   orderButton.innerHTML = 'place order';
-
+  total.append(table);
   total.append(orderButton);
   productsAndTotal.append(total);
   cart.append(productsAndTotal);
