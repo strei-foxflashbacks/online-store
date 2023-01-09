@@ -1,5 +1,6 @@
 import {ICartProductRecord} from "../../types/ICartProductRecord";
-import {updateCartCounter} from "../templates/header/updateCartButton";
+import {updateCartCounter} from "../templates/header/updateCount";
+import {updateSum} from "../templates/header/updateSum";
 
 //функции для работы кнопки добавить/удалить из каталога и карты товара
 export function toggleProduct(event: Event): void {
@@ -33,10 +34,15 @@ export function toggleProduct(event: Event): void {
   }
 
 function addProductToCart(cart: ICartProductRecord[], idProduct: number, button: HTMLElement): void {
-  const product: ICartProductRecord = {id: idProduct, count: 1};
+  if (!button.parentElement) {
+    throw new Error('can\'t get price!');
+  }
+  const price = Number(button.parentElement.getAttribute('data-price'));
+  const product: ICartProductRecord = {id: idProduct, count: 1, price: price};
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCounter();
+  updateSum();
   button.innerText = 'Delete from Cart';
 
 }
@@ -49,6 +55,7 @@ function deleteProductFromCart(cart: ICartProductRecord[], idProduct: number,  b
 
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCounter();
+      updateSum();
       button.innerText = 'Add to Cart';
       break;
     }

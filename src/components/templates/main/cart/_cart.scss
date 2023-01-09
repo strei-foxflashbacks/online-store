@@ -122,3 +122,14 @@ display: flex;
     scale: 1.5;
   }
 }
+.promo-error {
+  visibility: hidden;
+}
+.old-sum {
+  text-decoration: line-through red;
+  font-size: 18px;
+}
+
+.empty-cart {
+  height: 300px;
+}

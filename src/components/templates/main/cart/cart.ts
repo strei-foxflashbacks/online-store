@@ -2,6 +2,11 @@ import { IProductData } from "../../../../types/IProductData";
 import {productData} from "../../../product-data";
 import getProductCardInCart from "./product-card-in-cart";
 import getModalForPay from "./modal-for-pay/modal-for-pay";
+import {getArrayFromLS} from "../../../functions/localStorage";
+import {IPromoCode} from "../../../../types/IPromoCode";
+import {setPromoElement} from "../../../functions/cart_functions/handlePromoInput";
+import {getCartSum, applyPromoToSum} from "../../header/updateSum";
+import {getTotalCount} from "../../header/updateCount";
 
 const getCart = (): HTMLElement => {
   const productsInCartPage: IProductData[] = [];
@@ -10,10 +15,23 @@ const getCart = (): HTMLElement => {
   }
   const storageCart = localStorage.getItem('cart');
   const objCart = JSON.parse(storageCart!);
+
+  // if (objCart.length === 0) {
+  //   const main = document.querySelector('main');
+  //   if (main) {
+  //     main.classList.add('empty-cart');
+  //     const empty = document.createElement('div');
+  //     empty.innerText = 'The Cart is empty! :(';
+  //     main.append(empty);
+  //     return main;
+  //   }
+  // }
+
   for (let i = 0; i < objCart.length; i++) {
     productsInCartPage.push(productData[objCart[i].id - 1]);
   }
 
+  const promocodes = getArrayFromLS('promocodes');
 
 
   const cart = document.createElement('section');
@@ -62,42 +80,96 @@ const getCart = (): HTMLElement => {
   //сумма заказа, скидки, промокоды
   const total = document.createElement('div');
   total.className = 'total';
-  total.innerHTML =
-  `<table class="total__counting">
-    <tbody>
-        <tr>
-        <!--    Product(s), $ { totalWithoutDiscount}item(s)-->
-            <th>Product(s), item(s)</th>
-            <td class="total__sum-without-discount">20€</td>
-        </tr>
-        <tr>
-            <th>Promo code</th>
-            <td>
-                <input type="text" name="promo-code" class="promocode"/>
-            </td>
-        </tr>
-        <tr>
-            <th>Applied:</th>
-            <td>
-                <div class="total__promo-container"></div>
-            </td>
-        </tr>
-    </tbody>
-    <tfoot class="total__sum">
-        <tr>
-            <th>Total to pay</th>
-            <td>30€</td>
-        </tr>
-    </tfoot>
-  </table>
-`
+
+  const table = document.createElement('table');
+  table.classList.add('total__counting');
+  const tbody = document.createElement('tbody');
+
+  const rowProduct = document.createElement('tr');
+  const rowProductHead = document.createElement('th');
+  rowProductHead.innerText = 'Product(s), item(s)';
+
+  const rowProductData = document.createElement('td');
+  rowProductData.classList.add('total__sum-without-discount');
+
+  const pcs = document.createElement('span');
+  const sum = document.createElement('span');
+  pcs.innerText = `${getTotalCount()} pc(s),`;
+  pcs.id = 'pcs';
+  sum.innerText = `${getCartSum()}€`;
+  sum.id = 'prevSum';
+  rowProductData.append(pcs, sum);
+
+  rowProduct.append(rowProductHead, rowProductData);
+
+  const rowPromo = document.createElement('tr');
+
+  const rowPromoHead = document.createElement('th');
+  rowPromoHead.innerText = 'Promo code';
+
+  const rowPromoData = document.createElement('td');
+  rowPromoData.insertAdjacentHTML('beforeend', `<input type="text" name="promo-code" class="promocode"/>`);
+  rowPromo.append(rowPromoHead, rowPromoData);
+
+  const rowApplied = document.createElement('tr');
+  rowApplied.insertAdjacentHTML('afterbegin', '<th>Applied:</th>');
+
+
+  const totalPromoContainer = document.createElement('div');
+  totalPromoContainer.classList.add('total__promo-container');
+
+  totalPromoContainer.innerHTML = `<span class="promo-error">already applied</span>`;
+
+  const tdForTotal = document.createElement('td');
+  tdForTotal.insertAdjacentElement("beforeend", totalPromoContainer);
+  rowApplied.append(tdForTotal);
+
+
+  const promosInLocalStorage: IPromoCode[] = getArrayFromLS('promocodes');
+  if (getTotalCount() > 0) {
+    promosInLocalStorage.forEach(elem => {
+      totalPromoContainer.append(setPromoElement(elem.promoword));
+    });
+  }
+
+    tbody.append(rowProduct, rowPromo, rowApplied);
+
+    const tfoot = document.createElement('tfoot');
+    tfoot.classList.add('total__sum');
+
+    const rowTotal = document.createElement('tr');
+
+    const rowTotalHead = document.createElement('th');
+    rowTotalHead.innerText = 'Total to pay';
+
+    const rowTotalData = document.createElement('td');
+    rowTotalData.id = 'totalToPay';
+
+    const oldSum = document.createElement('div');
+    oldSum.innerText = `${getCartSum()}€`;
+
+  if (promocodes.length > 0) {
+    oldSum.classList.add('old-sum');
+    rowTotalData.append(oldSum);
+    rowTotalData.insertAdjacentHTML('beforeend', `<div>${applyPromoToSum(getCartSum())}€</div>`);
+  } else {
+    oldSum.classList.remove('old-sum');
+  }
+  rowTotalData.append(oldSum);
+
+
+    rowTotal.append(rowTotalHead, rowTotalData);
+
+    tfoot.append(rowTotal);
+  table.append(tbody, tfoot);
+
 
   //кнопка заказа
   const orderButton = document.createElement('button');
   orderButton.id = 'order';
   orderButton.className = 'button_color';
   orderButton.innerHTML = 'place order';
-
+  total.append(table);
   total.append(orderButton);
   productsAndTotal.append(total);
   cart.append(productsAndTotal);
