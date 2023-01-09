@@ -96,6 +96,7 @@ const getCart = (): HTMLElement => {
 
   const totalPromoContainer = document.createElement('div');
   totalPromoContainer.classList.add('total__promo-container');
+
   totalPromoContainer.innerHTML = `<span class="promo-error">already applied</span>`;
 
   const tdForTotal = document.createElement('td');
@@ -106,8 +107,9 @@ const getCart = (): HTMLElement => {
   const promosInLocalStorage: IPromoCode[] = getArrayFromLS('promocodes');
   if (getTotalCount() > 0) {
     promosInLocalStorage.forEach(elem => {
-    totalPromoContainer.append(setPromoElement(elem.promoword));
-      });
+      totalPromoContainer.append(setPromoElement(elem.promoword));
+    });
+  }
 
     tbody.append(rowProduct, rowPromo, rowApplied);
 
