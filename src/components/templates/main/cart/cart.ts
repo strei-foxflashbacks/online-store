@@ -5,6 +5,8 @@ import getModalForPay from "./modal-for-pay/modal-for-pay";
 import {getArrayFromLS} from "../../../functions/localStorage";
 import {IPromoCode} from "../../../../types/IPromoCode";
 import {setPromoElement} from "../../../functions/cart_functions/handlePromoInput";
+import {getCartSum, applyPromoToSum} from "../../header/updateSum";
+import {getTotalCount} from "../../header/updateCount";
 
 const getCart = (): HTMLElement => {
   const productsInCartPage: IProductData[] = [];
@@ -76,7 +78,7 @@ const getCart = (): HTMLElement => {
 
   const rowProductData = document.createElement('td');
   rowProductData.classList.add('total__sum-without-discount');
-  rowProductData.innerText = '20€'
+  rowProductData.innerText = `${getTotalCount()} pc(s), ${getCartSum()}€`;
   rowProduct.append(rowProductHead, rowProductData);
 
   const rowPromo = document.createElement('tr');
@@ -102,20 +104,29 @@ const getCart = (): HTMLElement => {
 
 
   const promosInLocalStorage: IPromoCode[] = getArrayFromLS('promocodes');
+  if (getTotalCount() > 0) {
     promosInLocalStorage.forEach(elem => {
     totalPromoContainer.append(setPromoElement(elem.promoword));
       });
 
-  tbody.append(rowProduct, rowPromo, rowApplied);
-  table.append(tbody);
-    table.insertAdjacentHTML('beforeend', `
-    <tfoot class="total__sum">
-        <tr>
-            <th>Total to pay</th>
-            <td id="totalToPay">30€</td>
-        </tr>
-    </tfoot>
-`);
+    tbody.append(rowProduct, rowPromo, rowApplied);
+
+    const tfoot = document.createElement('tfoot');
+    tfoot.classList.add('total__sum');
+
+    const rowTotal = document.createElement('tr');
+
+    const rowTotalHead = document.createElement('th');
+    rowTotalHead.innerText = 'Total to pay';
+
+    const rowTotalData = document.createElement('td');
+    rowTotalData.id = 'totalToPay';
+    rowTotalData.innerText = `${applyPromoToSum(getCartSum())}€`;
+
+    rowTotal.append(rowTotalHead, rowTotalData);
+
+    tfoot.append(rowTotal);
+  table.append(tbody, tfoot);
 
 
   //кнопка заказа

@@ -1,7 +1,7 @@
 //функции для работы с продуктом из страницы корзины
 import {ICartProductRecord} from "../../../types/ICartProductRecord";
 import {updateCartCounter} from "../../templates/header/updateCount";
-import {updateSum} from "../../templates/header/updateSum";
+import {updateSum, updateSumWithPromo} from "../../templates/header/updateSum";
 import {getArrayFromLS} from "../localStorage";
 
 function getProductFromEvent(event: Event): HTMLElement {
