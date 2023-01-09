@@ -1,6 +1,8 @@
 import {IPromoCode} from "../../../types/IPromoCode";
 import {getArrayFromLS} from "../localStorage";
 import {promocodeData} from "../../promocode-data";
+import {updateSumWithPromo} from "../../templates/header/updateSum";
+import {getTotalCount} from "../../templates/header/updateCount";
 
 export function handlePromoInput(event: Event) {
   const promoInput = event.target as HTMLInputElement;
@@ -19,11 +21,12 @@ export function handlePromoInput(event: Event) {
       promoArr.push(matchedInDataItem);
       localStorage.setItem('promocodes', JSON.stringify(promoArr));
       promoInput.value = "";
+      updateSumWithPromo();
   }
 }
 
 
-  function getMatchedItem(promoword: string, array: IPromoCode[]): IPromoCode | null {
+ export function getMatchedItem(promoword: string, array: IPromoCode[]): IPromoCode | null {
     let item = null;
     for (let i = 0; i < array.length; i++) {
       if (array[i].promoword === promoword) {
@@ -48,6 +51,5 @@ export function setPromoElement(promoname: string): HTMLElement {
   word.innerHTML = promoname;
 
   promo.append(word, crossButtonInput);
-  console.log('promo is created');
   return promo;
 }

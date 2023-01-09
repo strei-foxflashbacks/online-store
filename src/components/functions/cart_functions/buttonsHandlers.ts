@@ -72,6 +72,7 @@ export function plusMinusDeleteHandler(event: Event) {
       localStorage.setItem('cart', JSON.stringify(objCart));
       updateCartCounter();
       updateSum();
+      updateSumWithPromo();
 
       break;
     }
