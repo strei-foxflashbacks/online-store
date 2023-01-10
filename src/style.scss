@@ -1,0 +1,31 @@
+@import "base/normalize.css";
+@import "base/variables";
+@import "components/templates/main/catalog/catalog";
+@import "components/templates/header/header";
+@import "components/buttons";
+@import "components/templates/main/banner";
+@import "components/templates/main/filters";
+@import "components/templates/footer/footer";
+@import "components/templates/main/product-card";
+@import "components/templates/main/cart/cart";
+@import "components/templates/main/cart/modal-for-pay/modal-for-pay";
+
+body {
+  background-color: $main-background;
+  color: $font-color;
+  font: $main-font;
+  position: relative;
+}
+
+fieldset {
+  border: none;
+}
+
+.content-container {
+  @include content-container;
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+

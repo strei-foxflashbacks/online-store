@@ -1,0 +1,85 @@
+.button {
+  @include button;
+  width: 100%;
+
+  &:active {
+    background: $gradient;
+    border: none;
+    color: $light-on-dark;
+  }
+  &_color {
+    background: $gradient;
+    border: none;
+    color: $light-on-dark;
+    font-family: 'Spectral SC', serif;
+    font-size: 16px;
+    width: 185px;
+    text-transform: uppercase;
+    cursor: pointer;
+    height: 38px;
+    border-radius: 30px;
+  }
+  &_color:hover {
+    color: #424242;
+  }
+  &_color:active {
+    background: none;
+    border: 2px solid $brand-color;
+    color: $brand-color;
+  }
+}
+
+
+
+.cart-counter {
+  width: 25px;
+  height: 25px;
+  border-radius: 17px;
+  background-color: $additional-color;
+  display: block;
+  position: absolute;
+  font-size: 11px;
+  color: black;
+  top: -8px;
+  right: 27px;
+  text-align: center;
+  padding-top: 4px;
+  box-sizing: border-box;
+
+}
+
+.form {
+  position: relative;
+  &__input {
+    @include button;
+    padding-left: 10px;
+    resize: vertical;
+    width: 184px;
+  }
+  &__search-button {
+    border: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    top: 10px;
+    right: 10px;
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.cart-button {
+  height: 70px;
+  border-radius: 70px;
+  font-size: 23px;
+  width: 145px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#addingButton {
+  max-width: 170px;
+}
+
+
+

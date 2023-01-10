@@ -1,0 +1,69 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  max-width: 1337px;
+  gap: 28px;
+  width: 100%;
+}
+
+.three-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.two-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.catalog-card {
+  width: 245px;
+  height: 422px;
+  border-radius: 20px;
+  background-color: $background-cards;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  box-sizing: border-box;
+
+  &__photo {
+    max-width: 200px;
+  }
+
+  &__name {
+    font: $main-font;
+    align-self: flex-start;
+  }
+  &__price {
+    font: $font-bold;
+    align-self: flex-start;
+  }
+}
+
+.big-card {
+  width: 100%;
+  & > img {
+    max-width: 260px;
+  };
+}
+.biggest-card {
+  width: 100%;
+  height: 480px;
+  & > img {
+    max-width: 300px;
+  }
+}
+
+.catalog {
+  margin: 0 0 0 56px;
+}
+.buttons-container {
+  display: flex;
+  gap: 7px;
+}
+
+.hidden {
+  display: none;
+}

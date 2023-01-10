@@ -1,0 +1,74 @@
+.sort-button-container {
+  @include content-container;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-select {
+  border: 2px solid $button-inactive-color;
+  border-radius: 30px;
+  color: $button-inactive-color;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  padding: 5px;
+}
+
+.count-products-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon-grid {
+  width: 38px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.path-to-section {
+  &__item {
+    text-decoration: none;
+  }
+  margin-bottom: 20px;
+}
+
+
+.filter-container {
+  max-width: 227px;
+  &__title {
+    font: $font-bold;
+    margin-bottom: 10px;
+  }
+  &__item {
+border-bottom: 1px solid $button-inactive-color;
+    margin-bottom: 20px;
+  }
+  &__section {
+    margin: 10px 0;
+  }
+}
+
+.main-container {
+  display: flex;
+@include content-container;
+}
+
+.container-for-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filters button {
+  width: 100%;
+}
+
+.count-and-sort {
+  display: flex;
+  gap: 40px;
+}
