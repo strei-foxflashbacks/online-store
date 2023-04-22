@@ -1,9 +1,9 @@
-import clearPage from "./clearPage";
-import setDefaultPage from "./defaultPage";
-import getCart from "./templates/main/cart/cart";
-import {handleOrderButton} from "./functions/cart_functions/handleOrderButton";
-import {handlePromoInput} from "./functions/cart_functions/handlePromoInput";
-import {getMainNavigate, goBack} from "./router/router";
+import clearPage from "./pagesFunctions/clearPage";
+import setDefaultPage from "./pagesFunctions/defaultPage";
+import getCart from "../components/templates/main/cart/cart";
+import {handleOrderButton} from "../components/functions/cart_functions/handleOrderButton";
+import {handlePromoInput} from "../components/functions/cart_functions/handlePromoInput";
+import {getMainNavigate, goBack} from "../components/router/router";
 
 
 const getCartPage = () => {

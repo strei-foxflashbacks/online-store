@@ -1,6 +1,6 @@
-import getContacts from "./templates/header/contacts";
-import getContent from "./templates/header/content";
-import getFooter from "./templates/footer/footer";
+import getContacts from "../../components/templates/header/contacts";
+import getContent from "../../components/templates/header/content";
+import getFooter from "../../components/templates/footer/footer";
 
 const setDefaultPage = (): HTMLElement => {
   const body = document.querySelector('body') as HTMLElement;
