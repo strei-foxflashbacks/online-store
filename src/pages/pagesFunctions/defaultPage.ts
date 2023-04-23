@@ -8,7 +8,7 @@ const setDefaultPage = (): HTMLElement => {
   const header = document.createElement('header');
   const main = document.createElement('main');
 
-  header.append(getContacts(), getContent());
+  header.append(getContent());
 
   body.append(header, main, getFooter());
 

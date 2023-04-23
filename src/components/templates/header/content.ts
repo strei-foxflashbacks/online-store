@@ -1,32 +1,27 @@
 import router from "../../router/router";
 import {getCartSum} from "./updateSum";
 import {getTotalCount} from "./updateCount";
+import createElement from '../../../helpers/createElement';
 
 const getContent = (): HTMLElement => {
+  const background = createElement('div', { class: 'header-background' });
 
-  const contentContainer = document.createElement('div');
+  const headerContainer = createElement('div', { class: 'content-container' });
 
-  contentContainer.className = 'content-container';
-  contentContainer.innerHTML = `
-  <h1 class="logo">Hobby Art</h1>`;
+  const logo = createElement('h1', { class: 'logo' });
+  logo.innerText = 'Hobby Art';
 
-  const headerElements = document.createElement('div');
-  headerElements.classList.add('header-elements');
+  const headerElements = createElement('div', { class: 'header-elements' });
 
-  const button = document.createElement('button');
-  button.setAttribute('type', 'button');
-  button.setAttribute('id', 'cartButton');
+  const button = createElement('button', { class: 'button cart-button', type: 'button', id: 'cartButton' });
   button.innerText = getCartSum() > 0 ? `${getCartSum()}` : 'Cart';
-  button.classList.add('button', 'cart-button');
-  headerElements.append(button);
 
-  const counter = document.createElement('span');
-  counter.className = 'cart-counter';
-  counter.id = 'cartCounter';
+  const counter = createElement('span', { class: 'cart-counter', id: 'cartCounter' });
   counter.innerText = `${getTotalCount()}`;
 
-  headerElements.append(counter);
-  contentContainer.insertAdjacentElement('beforeend', headerElements);
+  headerElements.append(logo, button, counter);
+  headerContainer.append(headerElements);
+  background.append(headerContainer);
 
 
   if (button) {
@@ -35,7 +30,7 @@ const getContent = (): HTMLElement => {
     }
   }
 
-return contentContainer;
+return background;
 }
 
 export default getContent;

@@ -22,7 +22,7 @@ $product-card-photo-size: 550px;
 
 
 @mixin content-container {
-max-width: 1620px;
+  max-width: 1620px;
   margin: auto;
   padding: 0 15px;
 }
