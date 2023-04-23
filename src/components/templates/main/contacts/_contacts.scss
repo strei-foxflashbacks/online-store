@@ -1,0 +1,23 @@
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  @include content-container;
+
+  &__item {
+    list-style-type: none;
+    color: $font-color;
+    font: $main-font;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.container-contacts {
+  height: 45px;
+  display: flex;
+  align-items: center;
+}

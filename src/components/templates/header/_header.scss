@@ -1,27 +1,3 @@
-.contacts {
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  width: 100%;
-  @include content-container;
-
-  &__item {
-    list-style-type: none;
-    color: $light-on-dark;
-    font: $main-font;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-  }
-}
-
-.container-contacts {
-  height: 45px;
-  display: flex;
-  align-items: center;
-}
-
 .logo {
   font: $additional-font;
   font-size: 38px;
@@ -54,6 +30,7 @@
   position: fixed;
   z-index: 1;
   top: 0;
+  height: $header-height;
 }
 
 

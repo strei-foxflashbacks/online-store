@@ -4,6 +4,7 @@ import getSortContainer from "../components/templates/main/sort-container";
 import getMainContainer from "../components/templates/main/main-container";
 import clearPage from "./pagesFunctions/clearPage";
 import filterCatalog from "../components/functions/filterCatalog";
+import getContacts from '../components/templates/main/contacts/contacts';
 
 const getMainPage = () => {
   clearPage();
@@ -11,7 +12,7 @@ const getMainPage = () => {
 
   const main = document.querySelector('main') as HTMLElement;
 
-  main.append(getMainBanner(), getSortContainer(), getMainContainer());
+  main.append(getContacts(), getMainBanner(), getSortContainer(), getMainContainer());
 
   const viewAll = document.querySelector('.button_color') as HTMLElement;
 

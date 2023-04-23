@@ -3,7 +3,7 @@ import {getCartSum} from "./updateSum";
 import {getTotalCount} from "./updateCount";
 import createElement from '../../../helpers/createElement';
 
-const getContent = (): HTMLElement => {
+const getHeader = (): HTMLElement => {
   const background = createElement('div', { class: 'header-background' });
 
   const headerContainer = createElement('div', { class: 'content-container' });
@@ -33,4 +33,4 @@ const getContent = (): HTMLElement => {
 return background;
 }
 
-export default getContent;
+export default getHeader;

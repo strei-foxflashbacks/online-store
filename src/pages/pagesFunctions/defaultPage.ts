@@ -1,5 +1,4 @@
-import getContacts from "../../components/templates/header/contacts";
-import getContent from "../../components/templates/header/content";
+import getHeader from "../../components/templates/header/header";
 import getFooter from "../../components/templates/footer/footer";
 
 const setDefaultPage = (): HTMLElement => {
@@ -8,7 +7,7 @@ const setDefaultPage = (): HTMLElement => {
   const header = document.createElement('header');
   const main = document.createElement('main');
 
-  header.append(getContent());
+  header.append(getHeader());
 
   body.append(header, main, getFooter());
 
