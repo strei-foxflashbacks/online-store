@@ -2,7 +2,6 @@ import clearPage from "./pagesFunctions/clearPage"
 import setDefaultPage from "./pagesFunctions/defaultPage";
 import getProductCard from "../components/templates/main/product-card";
 import { productData } from "../components/product-data";
-import {getMainNavigate, goBack} from "../components/router/router";
 
 const getProductPage = (id: number) => {
   window.scroll(0, 0)
@@ -13,9 +12,6 @@ const getProductPage = (id: number) => {
 
   const main = document.querySelector('main') as HTMLElement;
 
-  main.append(getProductCard(product))
-
-  goBack();
-  getMainNavigate();
+  main.append(getProductCard(product));
 }
 export default getProductPage

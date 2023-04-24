@@ -3,8 +3,6 @@ import setDefaultPage from "./pagesFunctions/defaultPage";
 import getCart from "../components/templates/main/cart/cart";
 import {handleOrderButton} from "../components/functions/cart_functions/handleOrderButton";
 import {handlePromoInput} from "../components/functions/cart_functions/handlePromoInput";
-import {getMainNavigate, goBack} from "../components/router/router";
-
 
 const getCartPage = () => {
   clearPage();
@@ -21,8 +19,6 @@ const getCartPage = () => {
   if (promoInput) {
     promoInput.addEventListener('input', handlePromoInput);
   }
-  goBack();
-  getMainNavigate();
 }
 
 export default getCartPage;
